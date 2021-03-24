@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="pradyumna.simhansapp">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Evedas">
+        <!-- <activity android:name=".splash.Splash1" /> -->
+        <!-- <activity android:name=".developers.Developers" /> -->
+        <!-- <activity android:name=".instructions.Instructions" /> -->
+        <!-- <activity android:name=".contact.Contact" /> -->
+        <!-- <activity android:name=".prateekas.Prateekas" /> -->
+        <!-- <activity android:name=".sthothram.Sthothram" /> -->
+        <!-- <activity android:name=".prabandham.Prabandham" /> -->
+        <!-- <activity android:name=".about.About" /> -->
+        <!-- <activity android:name=".feedback.Feedback" /> -->
+        <activity
+            android:name=".splash.Splash1"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".splash.Splash2"
+            android:label="@string/title_activity_splash_screen2">
+            <intent-filter>
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Design.NoActionBar">
+            <intent-filter>
+                <action android:name="pradyumna.simhansapp.MainActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+         <activity
+         android:name=".learn_veda.Veda_Player"
+         android:label="@string/title_activity_learn_vedas"
+         android:theme="@style/Theme.MaterialComponents">
+         <intent-filter>
+         <category android:name="android.intent.category.DEFAULT" />
+         </intent-filter>
+         </activity>
+        <activity
+            android:name=".prabandham.Prabandham"
+            android:label="@string/title_activity_prabandham"
+            android:theme="@style/Theme.MaterialComponents">
+            <intent-filter>
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".feedback.Feedback"
+            android:label="@string/title_activity_feedback"
+            android:theme="@style/Theme.MaterialComponents">
+            <intent-filter>
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".contact.Contact"
+            android:label="@string/title_activity_contact"
+            android:theme="@style/Theme.MaterialComponents">
+            <intent-filter>
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <data android:scheme="geo" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".instructions.Instructions"
+            android:label="@string/title_activity_instructions"
+            android:theme="@style/Theme.MaterialComponents">
+            <intent-filter>
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+         <activity
+         android:name=".learn_veda.Learn_Veda"
+         android:label="@string/title_activity_veda_folders"
+         android:theme="@style/Theme.MaterialComponents">
+         <intent-filter>
+         <category android:name="android.intent.category.DEFAULT" />
+         </intent-filter>
+         </activity>
+        <activity
+            android:name=".developers.Developers"
+            android:label="@string/title_activity_developers"
+            android:theme="@style/Theme.MaterialComponents">
+            <intent-filter>
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".about.About"
+            android:label="@string/title_activity_about"
+            android:theme="@style/Theme.MaterialComponents">
+            <intent-filter>
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".sthothram.Sthothram"
+            android:label="@string/title_activity_sthothram"
+            android:theme="@style/Theme.MaterialComponents">
+            <intent-filter>
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".prateekas.Prateekas"
+            android:label="@string/title_activity_prateekas"
+            android:theme="@style/Theme.MaterialComponents">
+            <intent-filter>
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

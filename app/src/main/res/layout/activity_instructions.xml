@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="false"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingTop="10dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:background="#573706"
+            android:padding="5dp"
+            android:text="Instructions for quality learning"
+            android:textColor="#fff"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button7"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="3dp"
+            android:text="1. All the lessons are in such a way that Guru teaches the corresponding mantra/shloka and the student repeats it for two times.\n You are advised to listen to the Guru carefully and chant simultaneously along with the student for two times."
+            android:textColor="#000"
+            android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView13"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="3dp"
+            android:text="2. Each part consists of 1-3 steps, signifying difficulty level - EASY to COMPLETE"
+            android:textColor="#000"
+            android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView18"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="3dp"
+            android:text="3. If there are 3 steps in the recording, it is advised to follow and chant step 1 for 4 days and then move on to step 2 for the next 4 days. Finally, step 3 is to be followed for the next 4 days."
+            android:textColor="#000"
+            android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView14"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="3dp"
+            android:text="4. In case of 2 steps, follow each step for 6 days each."
+            android:textColor="#000"
+            android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView15"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="3dp"
+            android:text="5. After you are confident of fluency, you can go to tiruve which shall be done in the following manner.
+\nIn case of vedas, count 10 sentences and chant  the same for 5 times continuously before going to the next 10 sentences.  Repeat the same for minimum of 3 days for effective learning.
+\nIn case of Divya Prabhanda, each paashuram has to be repeated for 5 times continuously before going to the next paashuram.  Repeat this exercise of 3 days for effective learning.  So, in 15 days, the learning exercise for that particular portion will be completed.
+"
+            android:textColor="#000"
+            android:textSize="17dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView16"
+            android:layout_margin="3dp"
+            android:text="6. There are six auxiliary disciplines of Vedas known as Vedaangas developed in ancient times, and are essential in the study and practice of  The Vedas.
+\nThese are: Shiksha,  Chandas,  Vyakarana, Niruktha, Kalpa and Jyothisha. We expand the importance of only Shiksha here
+\n\n
+Shiksha (śikṣā): phonetics, phonology, pronunciation.This  focusses on the letters of the Sanskrit alphabet, accent, quantity, stress, melody and rules of euphonic combination of words during a Vedic recitation. Hence, the pronunciation in a standard and well accepted format is one of the hallmarks of veda recitation. It also renders group recitation very effective and appealing
+\n\n
+Dress code:
+There are accepted dress codes like kachchapancha and uttariya for married men and Datti panche and uttariya for brahmacharis. We also have to apply lanchana on the forehead  according to our tradition. . This is to be followed strictly to respect and preserve our  ancient tradition."
+            android:textColor="#000"
+            android:textSize="17dp" />
+
+    </RelativeLayout>
+</ScrollView>

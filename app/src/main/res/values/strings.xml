@@ -1,0 +1,77 @@
+<resources>
+    <string name="app_name">E-vedas</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="profile">\t Vidwan R Varada Simhan hails from Mysore and belongs to the lineage of learned vaidik scholars.
+\n  His paternal grand father Vid.Late S Seshadri Iyengar was a chaturshastra vidwan and was the retired principal of Mysore Maharaja Sanskrit Paatashaala. He had also rendered kainkaryam at Sri Ahobila Matam, Mysore for decades. After retirement, he taught at Srirangam Paatashaala.
+\n  His maternal grand father Ve. Br. Vid late Shri. T. E Krishnamacharya was the Salakshana Yajurveda Ghanapati and was the retired Yajurveda Teacher at the TTD Veda Patashala, Tirumala. Post retirement, he rendered veda parayana kainkaryam at Sri Varada Raja Swamy Perumal Temple, Kanchipuram for close to 3 decades.
+\n  Vid Varada Simhan’s father Vid late S. Raghavan was a triple master graduate, a samaveda salakshana vidwan and a performing carnatic classical flutist.
+</string>
+    <string name="career">Continuing the lineage, Shri Varada Simhan , initially did yajurveda adhyanam under  his maternal grand father. He then went on to learn Yajurveda Poorva and Apara Prayoga under Vid Sri.H. Srinivasaachar, popularly known as Sosale vaadyar and Practical training under Vid Sri.T.A.Sheshadri.  Later pursued higher vedic studies and prayoga along with Apastamba Sutras with Ve Br Vid. Prof.  R K Srikantakumaraswamy, a retired professor of Metallurgy, I.I.T., Madras in Mysore for close to 8 years. Sri.Srinivasa Iyengar, was kind enough to teach Naalayira Divya Prabandham to him. \n Sri Varada Simhan has been performing yajurveda samskaras to the Community at large for close to 25 years and has travelled across India.</string>
+    <string name="dedication">“ I would like to dedicate this app to my parents, siblings and kids, specially  to my mother, who has been my moral strength ever since I lost my father in childhood. I take immense pleasure in dedicating this app to all my gurus who are responsible for what I’m today. I also take this opportunity to thank my disciples Chi.Sudarshan, Chi.Pradyumna and Chi.Shashank without who’s effort this App wouldn’t have been possible. Finally, I would like to  dedicate this app to my wife,  without whom Simhan’s E-VedaSHREE  wouldn’t have been a reality. She  has been a  source of motivation and strength for  all my success  “  \n - Vid. R. Varada Simhan</string>
+
+
+    <string name="about_veda">Veda means knowledge, wisdom  or vision and it manifests the language of the gods in human speech. They draw forth the thought of successive generation of thinkers, and so contain within it the different strata of thought.</string>
+    <string name="origin">‘Vedah apourusheyah’ - Vedas are not created by humans. They are created by Brahman (Supreme Being). Hence the origin of Vedas cannot be traced. Since they exist before Kritha yuga, we can easily say that they are known to human beings al least 40,00,000 years from now, and are the most ancient on the earth. In the last 10,000 years, they have been written using human language.
+\n \n Vedas were revealed by supreme soul in the form of subtle waves to Rishis (seers) when they were in deep penance in search of knowledge. So Vedas were heard by seers and hence they are called ‘sruti’ (heard). Seers were so kind that they wanted to share this knowledge for the benefit of mankind. So they started teaching Vedas in the form of sentences (sound) to their disciples. The disciples started teaching them to their disciples. Thus Vedas had taken the form of sound and the language used was ‘Geervaana’ which is the ancient form of now existing Sanskrit language. Geervaana is called ‘language of gods’. The language form of Vedas is called ‘smrithi’ (remembered).
+</string>
+    <string name="classification">‘Anantha vai Vedaah’ – Vedas are infinite. The knowledge in Vedas has neither beginning nor ending. It is like a torch illuminating the path of human race from time to time. The entire knowledge in Vedas was codified and divided by Sage Veda Vyasa into 4 types, called Rig Veda, Yajur Veda, Saama Veda and Atharvana Veda.
+
+\n \n 1. Rig Veda: ‘Rik’ means praise. Rig Veda contains praises for the deities like Indra, Agni, Rudra, and the two Ashwini gods, Varuna, Maruts, Savitru and Surya. Tapping the energies of the Nature is given high importance in Rig Veda. It contains 1017 hymns (poems) praising the gods. These hymns are composed of different metres. A metre comprises of 25 syllables to 104 syllables which are to be recited at a stretch.
+      \n  \n2. Yajur Veda: ‘Yajush’ means rituals. Yajur Veda contains different rituals and sacrifices to be conducted to pacify gods. When a mantra is recited and its power is felt, then to make the mantra useful, a certain type of offerings should be done to the concerned god. Yajur Veda explains about these offerings to be made to gods through Agni (fire).
+Yajur Veda is divided into ‘Krishna (Dark) Yajur Veda’ and ‘Shukla (Bright) Yajur Veda’. Bright Yajur Veda contains mantras used in the rituals while explanations exist in a separate ‘Brahamana’ work. The Dark Yajur Veda incorporates such explanations in the work itself, often immediately following the mantras. There are 101 branches for the Dark Yajur Veda and 17 for Bright Yajur Veda.
+
+        \n \n3. Saama Veda: ‘Saama’ means song. Saama Veda contains verses to be sung. These verses are built in their root form using the 7 notes: Sa, Ri, Ga, Ma, Pa, Dha, Ni which are the basis of the classical music now existing in India. These notes aid the liberation of soul by stimulating the energy centers (chakras) in the human body.
+Most of the verses in Saama Veda are taken from Rig Veda. There are several new verses added. Also, some verses are repeated. In all, it consists 1875 verses. These verses are addressed to Agni (fire), Indra (lord of gods) and Soma (moon). The verses of Saama Veda should be sung and not to be chanted. Singing these verses is called ‘Saamagaana’.
+
+        \n \n4. Atharvana Veda: Atharvana Veda contains useful rituals to attain worldly happiness. It contains description of diseases, how to cure them, sins and how to remove their effects and means of acquiring wealth. Atharvana Veda is more applicable to modern society since it deals with different subjects like Science, Medicine, Mathematics, Engineering, Technology etc. Atharvana Veda contains about 6000 verses forming 731 hymns.
+</string>
+    <string name="components">Each of the four vedas have these parts.
+        \n 1. Mantra Samhitas: They are hymns, poems and prayers to various gods.
+\n 2. Brahmanas: They explain how to perform sacrifices and offerings to gods.
+\n 3. Aranyakas: They give philosophical interpretations of the rituals.
+\n 4. Upanishats: They are considered most important because they contain the gist of entire knowledge of all Vedas.
+</string>
+
+
+    <string name="abt">You will be aware that we are approaching the landmark 1000th year of Ramanuja’s Thirunakshatram in few months. He was the person who spread the Sri Vaishnava Samparadayam and showed the greatness of our Vishishtadvaita philosophy to the world. On this occassion to celebrate our “torch bearer” of Vishishtadvaita, A mobile application is conceptualised and released by Shri U. Ve,. Varada Simhan from Mysore. This is an unique application with amazing contents taught in a "Santhai" style.
+\n\n
+Looking at the digitial world today where everyone is well versed with gadgets starting from early age, this application will act as a great learning and teaching platform to all the youngsters who are aspiring to start "Veda Adhyayanam". This master piece consists of the following.
+\n
+1. Vedas
+\n
+2. Prabandham
+\n\n
+This application is also intended for every Hindu Brahmin family to kindle interests in their future generation  and to give them the glorious path of "Life". This media can be useful for many generations to come. Shri U Ve. Varada Simhnan has spent enormous amount of hours to create this application. This can be accessed across all over the world. For all parents who have an aspiration to make their next generation follow the legacy and to keep the thread of our Sampradayam, this application is a fantastic launching pad to fulfill their duties.
+\n\n
+SRIMATHE RAMANUJAYE NAMAHA
+PRANAMANGAL</string>
+    <string name="title_activity_splash_screen2">SplashScreen2</string>
+
+    <string name="title_activity_learn_vedas">LearnVedas</string>
+    <string name="title_activity_prabandham">Prabandham</string>
+    <string name="title_activity_chat">Chat</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_register">Register</string>
+    <string name="title_activity_users">Users</string>
+    <string name="title_activity_feedback">Feedback</string>
+    <string name="title_activity_contact">Contact</string>
+    <string name="title_activity_instructions">Instructions</string>
+    <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="title_activity_veda_folders">VedaFolders</string>
+    <string name="title_activity_developers">Developers</string>
+
+    <string name="banner_home_footer">ca-app-pub-8866794556258590/8204921261</string>
+    <string name="interstitial_full_screen">ca-app-pub-8866794556258590/7007389668</string>
+    <string name="interstitial_full_screen_prabhandam">ca-app-pub-8866794556258590/1172678868</string>
+    <string name="title_activity_about">About</string>
+    <string name="title_activity_sthothram">Sthothram</string>
+    <string name="title_activity_prateekas">Prateekas</string>
+</resources>
