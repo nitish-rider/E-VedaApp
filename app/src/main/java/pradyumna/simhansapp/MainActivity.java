@@ -32,7 +32,7 @@ import pradyumna.simhansapp.learn_veda.Learn_Veda;
 import pradyumna.simhansapp.prabandham.Prabandham;
 import pradyumna.simhansapp.prateekas.Prateekas;
 import pradyumna.simhansapp.profile.Profile;
-import pradyumna.simhansapp.sthothram.Sthothram;
+import pradyumna.simhansapp.sthotas.Sthotras;
 import pradyumna.simhansapp.vedas.Vedas;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -171,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         } else if(id == R.id.nav_stho){
 
-            Intent intent = new Intent(MainActivity.this, Sthothram.class);
+            Intent intent = new Intent(MainActivity.this, Sthotras.class);
             startActivity(intent);
 
         } else if(id == R.id.nav_pra){

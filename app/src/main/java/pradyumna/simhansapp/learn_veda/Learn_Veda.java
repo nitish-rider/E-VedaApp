@@ -9,6 +9,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 
 import pradyumna.simhansapp.R;
+import pradyumna.simhansapp.adapters.LvAdapter;
 
 public class Learn_Veda extends AppCompatActivity {
     RecyclerView recyclerView;

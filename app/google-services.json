@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "593777125659",
+    "firebase_url": "https://e-vedas-default-rtdb.firebaseio.com",
+    "project_id": "e-vedas",
+    "storage_bucket": "e-vedas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:593777125659:android:a3f69a4fff855688858bbe",
+        "android_client_info": {
+          "package_name": "pradyumna.simhansapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "593777125659-tjia4r6jh7ft8a0rj09nnojpqijjk737.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAcFxZGxl1i_0-ye20y6uMXmpJQgGCA0A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "593777125659-tjia4r6jh7ft8a0rj09nnojpqijjk737.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

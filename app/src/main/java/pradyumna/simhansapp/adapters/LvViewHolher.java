@@ -1,4 +1,4 @@
-package pradyumna.simhansapp.learn_veda;
+package pradyumna.simhansapp.adapters;
 
 import android.view.View;
 import android.widget.ImageView;

@@ -14,7 +14,7 @@
         <!-- <activity android:name=".instructions.Instructions" /> -->
         <!-- <activity android:name=".contact.Contact" /> -->
         <!-- <activity android:name=".prateekas.Prateekas" /> -->
-        <!-- <activity android:name=".sthothram.Sthothram" /> -->
+        <!-- <activity android:name=".sthothram.Sthotras" /> -->
         <!-- <activity android:name=".prabandham.Prabandham" /> -->
         <!-- <activity android:name=".about.About" /> -->
         <!-- <activity android:name=".feedback.Feedback" /> -->
@@ -114,7 +114,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".sthothram.Sthothram"
+            android:name=".sthotas.Sthotras"
             android:label="@string/title_activity_sthothram">
             <intent-filter>
 
