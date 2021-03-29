@@ -10,12 +10,14 @@
         android:layout_weight="1">
 
         <ImageView
+            android:id="@+id/RvImade"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/folderimg"
             android:layout_gravity="center"/>
 
         <TextView
+            android:id="@+id/RvText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Foldername"
@@ -38,6 +40,7 @@
             android:src="@drawable/folderimg"/>
 
         <TextView
+            android:id="@+id/RvText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Foldername"

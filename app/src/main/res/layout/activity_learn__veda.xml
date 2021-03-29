@@ -7,6 +7,7 @@
     tools:context=".learn_veda.Learn_Veda">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lvrecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:listitem="@layout/reccycle_view_item"/>
