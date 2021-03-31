@@ -9,14 +9,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import pradyumna.simhansapp.R;
 
-public class LvViewHolher extends RecyclerView.ViewHolder {
+public class RvViewHolher extends RecyclerView.ViewHolder {
 
     TextView mTextView;
-    TextView mTextView2;
 
-    public LvViewHolher(@NonNull View itemView) {
+    public RvViewHolher(@NonNull View itemView) {
         super(itemView);
-        mTextView= mTextView.findViewById(R.id.RvText);
-        mTextView2=mTextView2.findViewById(R.id.RvText2);
+        mTextView= itemView.findViewById(R.id.RvText);
     }
 }
