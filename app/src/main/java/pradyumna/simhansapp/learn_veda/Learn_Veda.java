@@ -13,7 +13,7 @@ import java.util.ArrayList;
 //import java.util.Observer;
 
 import pradyumna.simhansapp.R;
-import pradyumna.simhansapp.adapters.RvAdapter;
+import pradyumna.simhansapp.adaptersFolders.RvAdapter;
 import pradyumna.simhansapp.viewModel.VedasFolderViewModel;
 
 public class Learn_Veda extends AppCompatActivity {
@@ -47,9 +47,5 @@ public class Learn_Veda extends AppCompatActivity {
                 }
             });
         }
-
-
-
-
     }
 }

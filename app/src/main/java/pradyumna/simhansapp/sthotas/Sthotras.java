@@ -2,10 +2,8 @@ package pradyumna.simhansapp.sthotas;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -14,7 +12,7 @@ import android.util.Log;
 import java.util.ArrayList;
 
 import pradyumna.simhansapp.R;
-import pradyumna.simhansapp.adapters.RvAdapter;
+import pradyumna.simhansapp.adaptersFolders.RvAdapter;
 import pradyumna.simhansapp.viewModel.SthotasFolderViewModel;
 
 public class Sthotras extends AppCompatActivity {

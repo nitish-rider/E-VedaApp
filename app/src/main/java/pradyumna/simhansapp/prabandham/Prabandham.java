@@ -12,7 +12,7 @@ import android.util.Log;
 import java.util.ArrayList;
 
 import pradyumna.simhansapp.R;
-import pradyumna.simhansapp.adapters.RvAdapter;
+import pradyumna.simhansapp.adaptersFolders.RvAdapter;
 import pradyumna.simhansapp.viewModel.PrabandhamFolderViewModel;
 
 public class Prabandham extends AppCompatActivity {
