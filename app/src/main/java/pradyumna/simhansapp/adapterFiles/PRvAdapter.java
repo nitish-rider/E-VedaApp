@@ -1,23 +1,37 @@
 package pradyumna.simhansapp.adapterFiles;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.DiffUtil;
+import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Set;
 
 import pradyumna.simhansapp.R;
 
-public class PRvAdapter extends RecyclerView.Adapter<PRvViewHolder> {
+public class PRvAdapter extends ListAdapter<String,PRvViewHolder> {
 
-    ArrayList<String> items;
 
-    public void setItems(ArrayList<String> items) {
-        this.items = items;
+    public PRvAdapter() {
+        super(new DiffUtil.ItemCallback<String>() {
+            @Override
+            public boolean areItemsTheSame(@NonNull String oldItem, @NonNull String newItem) {
+                return oldItem.equals(newItem);
+            }
+
+            @Override
+            public boolean areContentsTheSame(@NonNull String oldItem, @NonNull String newItem) {
+                return oldItem.equals(newItem);
+            }
+        });
     }
+
 
     @NonNull
     @Override
@@ -28,18 +42,21 @@ public class PRvAdapter extends RecyclerView.Adapter<PRvViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull PRvViewHolder holder, int position) {
-        if (items != null) {
-            String title1 = items.get(position);
-            holder.mTextView.setText(title1);
-        } else {
-            holder.mTextView.setText("NO WORD");
-        }
+
+        String item = getItem(position);
+        holder.mTextView.setText(item);
+
+
+//        if (items != null) {
+//            Object[] obj;
+//            obj= items.toArray();
+//
+//            String title1 =obj[position].toString();
+//            Log.d("OnBinding", "set DATA"+obj[position].toString());
+//            holder.mTextView.setText(title1);
+//        } else {
+//            holder.mTextView.setText("NO WORD");
+//        }
     }
 
-    @Override
-    public int getItemCount() {
-        if (items != null)
-            return items.size();
-        else return 0;
-    }
 }

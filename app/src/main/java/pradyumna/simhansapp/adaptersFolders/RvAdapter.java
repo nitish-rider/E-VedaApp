@@ -3,6 +3,7 @@ package pradyumna.simhansapp.adaptersFolders;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,9 +12,14 @@ import java.util.ArrayList;
 
 import pradyumna.simhansapp.R;
 
-public class RvAdapter extends RecyclerView.Adapter<RvViewHolher> {
+public class RvAdapter extends RecyclerView.Adapter<RvAdapter.RvViewHolher> {
 
     ArrayList<String> items;
+    RvClickHandler mRvClickHandler;
+
+    public RvAdapter(RvClickHandler rvClickHandler) {
+        mRvClickHandler = rvClickHandler;
+    }
 
     public void setItems(ArrayList<String> items) {
         this.items = items;
@@ -44,4 +50,21 @@ public class RvAdapter extends RecyclerView.Adapter<RvViewHolher> {
             return items.size();
         else return 0;
     }
+    public class RvViewHolher extends RecyclerView.ViewHolder {
+
+        TextView mTextView;
+
+        public RvViewHolher(@NonNull View itemView) {
+            super(itemView);
+            mTextView= itemView.findViewById(R.id.RvText);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mRvClickHandler.onItemClick(getAdapterPosition());
+                }
+            });
+        }
+    }
 }
+
+

@@ -8,14 +8,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import pradyumna.simhansapp.R;
 import pradyumna.simhansapp.adaptersFolders.RvAdapter;
+import pradyumna.simhansapp.adaptersFolders.RvClickHandler;
 import pradyumna.simhansapp.viewModel.SthotasFolderViewModel;
 
-public class Sthotras extends AppCompatActivity {
+public class Sthotras extends AppCompatActivity implements RvClickHandler {
     RecyclerView recyclerView;
     ArrayList<String> items;
     SthotasFolderViewModel mSthotasFolderViewModel;
@@ -28,7 +30,7 @@ public class Sthotras extends AppCompatActivity {
         recyclerView=findViewById(R.id.LsrecyclerView);
         mSthotasFolderViewModel= ViewModelProviders.of(this).get(SthotasFolderViewModel.class);
 
-        RvAdapter adapter= new RvAdapter();
+        RvAdapter adapter= new RvAdapter(this);
         recyclerView.setAdapter(adapter);
         GridLayoutManager layoutManager=new GridLayoutManager(this,2);
         recyclerView.setLayoutManager(layoutManager);
@@ -46,5 +48,10 @@ public class Sthotras extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Toast.makeText(this, items.get(position), Toast.LENGTH_LONG).show();
     }
 }

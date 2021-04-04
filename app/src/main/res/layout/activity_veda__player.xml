@@ -8,5 +8,12 @@
     tools:context=".learn_veda.Veda_Player">
 
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/PlayerRv"
+        tools:listitem="@layout/player_recycler_view_item"
+        />
+
 
 </LinearLayout>

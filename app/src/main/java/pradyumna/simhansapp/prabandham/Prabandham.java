@@ -8,14 +8,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import pradyumna.simhansapp.R;
 import pradyumna.simhansapp.adaptersFolders.RvAdapter;
+import pradyumna.simhansapp.adaptersFolders.RvClickHandler;
 import pradyumna.simhansapp.viewModel.PrabandhamFolderViewModel;
 
-public class Prabandham extends AppCompatActivity {
+public class Prabandham extends AppCompatActivity implements RvClickHandler {
     RecyclerView recyclerView;
     ArrayList<String> items;
     PrabandhamFolderViewModel mPrabandhamDataViewModel;
@@ -28,7 +30,7 @@ public class Prabandham extends AppCompatActivity {
         recyclerView=findViewById(R.id.LprecyclerView);
         mPrabandhamDataViewModel= ViewModelProviders.of(this).get(PrabandhamFolderViewModel.class);
 
-        RvAdapter adapter= new RvAdapter();
+        RvAdapter adapter= new RvAdapter(this);
         recyclerView.setAdapter(adapter);
         GridLayoutManager layoutManager=new GridLayoutManager(this,2);
         recyclerView.setLayoutManager(layoutManager);
@@ -46,5 +48,10 @@ public class Prabandham extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Toast.makeText(this, items.get(position), Toast.LENGTH_LONG).show();
     }
 }
