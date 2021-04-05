@@ -1,8 +1,10 @@
 package pradyumna.simhansapp.player;
 
+import android.annotation.SuppressLint;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
@@ -25,6 +27,7 @@ public class player  extends AppCompatActivity {
     Handler handler  = new Handler();
     Runnable runnable;
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +62,18 @@ public class player  extends AppCompatActivity {
         });
 
         prepareMediaPlayer();
+
+        seekBar.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+
+                SeekBar seekBar = (SeekBar) view;
+                int playPosition = (mediaPlayer.getDuration() / 100) * seekBar.getProgress();
+                mediaPlayer.seekTo(playPosition);
+                playerPosition.setText(milliSecondToTimer(mediaPlayer.getCurrentPosition()));
+                return false;
+            }
+        });
     }
 
 
