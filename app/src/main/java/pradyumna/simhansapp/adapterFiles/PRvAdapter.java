@@ -4,6 +4,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
@@ -14,11 +15,15 @@ import java.util.ArrayList;
 import java.util.Set;
 
 import pradyumna.simhansapp.R;
+import pradyumna.simhansapp.adaptersFolders.RvClickHandler;
 
-public class PRvAdapter extends ListAdapter<String,PRvViewHolder> {
+public class PRvAdapter extends ListAdapter<String,PRvAdapter.PRvViewHolder> {
+
+    RvClickHandler mRvClickHandler;
 
 
-    public PRvAdapter() {
+    public PRvAdapter(RvClickHandler rvClickHandler) {
+
         super(new DiffUtil.ItemCallback<String>() {
             @Override
             public boolean areItemsTheSame(@NonNull String oldItem, @NonNull String newItem) {
@@ -30,6 +35,7 @@ public class PRvAdapter extends ListAdapter<String,PRvViewHolder> {
                 return oldItem.equals(newItem);
             }
         });
+        mRvClickHandler=rvClickHandler;
     }
 
 
@@ -46,17 +52,21 @@ public class PRvAdapter extends ListAdapter<String,PRvViewHolder> {
         String item = getItem(position);
         holder.mTextView.setText(item);
 
+    }
+    public class PRvViewHolder extends RecyclerView.ViewHolder {
 
-//        if (items != null) {
-//            Object[] obj;
-//            obj= items.toArray();
-//
-//            String title1 =obj[position].toString();
-//            Log.d("OnBinding", "set DATA"+obj[position].toString());
-//            holder.mTextView.setText(title1);
-//        } else {
-//            holder.mTextView.setText("NO WORD");
-//        }
+        TextView mTextView;
+
+        public PRvViewHolder(@NonNull View itemView) {
+            super(itemView);
+            mTextView=itemView.findViewById(R.id.FileNameRV);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mRvClickHandler.onItemClick(getAdapterPosition());
+                }
+            });
+        }
     }
 
 }
