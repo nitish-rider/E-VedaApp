@@ -3,8 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
+    android:background="@color/blue_200"
     android:orientation="vertical"
-    android:padding="10dp"
+    android:paddingTop="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
     android:fillViewport="false">
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,20 +23,15 @@
             android:id="@+id/imageView2"
             android:src="@drawable/simhan_final"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="6dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_marginBottom="6dp" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:text="Lineage"
-            android:background="#FFA726"
-            android:textColor="#fff"
-            android:id="@+id/button"
-            android:layout_below="@+id/imageView2"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:background="#F1D548"
+            android:textColor="#000"
+            android:id="@+id/button" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -41,12 +39,11 @@
             android:textAlignment="gravity"
             android:padding="5dp"
             android:lineSpacingExtra="3dp"
-            android:textSize="15dp"
-            android:textColor="#573706"
+            android:textSize="15sp"
+            android:textColor="#F1D548"
+
             android:text="@string/profile"
-            android:id="@+id/textView2"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/button" />
+            android:id="@+id/textView2" />
 
 
         <ImageView
@@ -59,10 +56,9 @@
             android:layout_height="40dp"
             android:text="Paternal Grandparents \nSmt.Aandal and Sri.S.Seshaadri Iyengar"
             android:layout_margin="5dp"
-            android:background="@color/colorPrimary"
-            android:textColor="#fff"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/imageView3"
+            android:background="#F1D548"
+            android:textColor="#000"
+
             android:id="@+id/button8"
             android:layout_gravity="center_horizontal" />
 
@@ -76,10 +72,8 @@
             android:layout_height="40dp"
             android:text="Maternal Grandparents \nSmt.Pushpavalli and Sri.T.E.Krishnamachariar"
             android:layout_margin="5dp"
-            android:background="@color/colorPrimary"
-            android:textColor="#fff"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/imageView3"
+            android:background="#F1D548"
+            android:textColor="#000"
             android:id="@+id/button9"
             android:layout_gravity="center_horizontal" />
 
@@ -93,10 +87,8 @@
             android:layout_height="40dp"
             android:text="Parents \nSmt.Kanakavalli and Sri.S.Raaghavan"
             android:layout_margin="5dp"
-            android:background="@color/colorPrimary"
-            android:textColor="#fff"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/imageView3"
+            android:background="#F1D548"
+            android:textColor="#000"
             android:id="@+id/button10"
             android:layout_gravity="center_horizontal" />
 
@@ -112,12 +104,9 @@
             android:layout_height="40dp"
             android:text="Career"
             android:layout_margin="5dp"
-            android:background="#FFA726"
-            android:textColor="#fff"
-            android:id="@+id/button2"
-            android:layout_below="@+id/textView"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:background="#F1D548"
+            android:textColor="#000"
+            android:id="@+id/button2" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -125,67 +114,53 @@
             android:textAlignment="gravity"
             android:padding="5dp"
             android:lineSpacingExtra="3dp"
-            android:textSize="15dp"
-            android:textColor="#573706"
+            android:textSize="15sp"
+            android:textColor="#F1D548"
             android:text="@string/career"
-            android:id="@+id/textView3"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/button2" />
+            android:id="@+id/textView3" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:id="@+id/imageView3"
-            android:src="@drawable/guru1"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/textView3" />
+            android:src="@drawable/guru1" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:text="Vid Sri.H. Srinivasaachar"
             android:layout_margin="5dp"
-            android:background="@color/colorPrimary"
-            android:textColor="#fff"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/imageView3"/>
+            android:background="#F1D548"
+            android:textColor="#000" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="300dp"
             android:id="@+id/imageView4"
-            android:src="@drawable/sheshadri_vaadhyar"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/textView3" />
+            android:src="@drawable/sheshadri_vaadhyar" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:text="Vid Sri.T.A.Sheshadri"
             android:layout_margin="5dp"
-            android:background="@color/colorPrimary"
-            android:textColor="#fff"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/imageView3"/>
+            android:background="#F1D548"
+            android:textColor="#000" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="300dp"
             android:layout_margin="5dp"
             android:id="@+id/imageView5"
-            android:src="@drawable/paramguru"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/textView3" />
+            android:src="@drawable/paramguru" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:text="Vid. Prof.  R K Srikantakumaraswamy"
             android:layout_margin="5dp"
-            android:background="@color/colorPrimary"
-            android:textColor="#fff"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/imageView3"/>
+            android:background="#F1D548"
+            android:textColor="#000" />
 
         <View
             android:layout_width="match_parent"
@@ -200,24 +175,18 @@
             android:text="Vidwan's Forewords"
             android:padding="5dp"
             android:layout_margin="5dp"
-            android:background="#FFA726"
-            android:textColor="#fff"
-            android:id="@+id/button3"
-            android:layout_below="@+id/textView3"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:background="#F1D548"
+            android:textColor="#000"
+            android:id="@+id/button3" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAlignment="gravity"
-            android:padding="5dp"
             android:lineSpacingExtra="3dp"
-            android:textSize="15dp"
-            android:textColor="#573706"
+            android:textSize="15sp"
+            android:textColor="#F1D548"
             android:text="@string/dedication"
-            android:id="@+id/textView4"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/button2" />
+            android:id="@+id/textView4" />
 
     </LinearLayout>
 </ScrollView>

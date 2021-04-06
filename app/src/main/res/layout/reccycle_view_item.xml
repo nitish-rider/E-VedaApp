@@ -1,52 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="wrap_content"
-    android:layout_height="wrap_content" >
-
-<!--    <LinearLayout-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="vertical"-->
-<!--        android:layout_weight="1">-->
-
-        <ImageView
-            android:id="@+id/RvImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/folderimg"
-             />
-
-        <TextView
-            android:id="@+id/RvText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Foldername"
-            android:textSize="15sp"
-            android:layout_gravity="center"/>
-
-<!--    </LinearLayout>-->
+    android:orientation="horizontal" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
 
 
-<!--    <LinearLayout-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="vertical"-->
-<!--        android:layout_weight="1">-->
+                <ImageView
+                    android:id="@+id/RvImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="15dp"
+                    android:src="@drawable/folder1"
+                    />
 
-<!--        <ImageView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:src="@drawable/folderimg"/>-->
+                <TextView
+                    android:id="@+id/RvText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Foldername"
+                    android:textColor="#F1D548"
+                    android:padding="10dp"
+                    android:textSize="20sp"
+                    android:layout_gravity="center"/>
 
-<!--        <TextView-->
-<!--            android:id="@+id/RvText2"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:hint="Foldername"-->
-<!--            android:textSize="15sp"-->
-<!--            android:layout_gravity="center"/>-->
 
-<!--    </LinearLayout>-->
+
 
 </LinearLayout>

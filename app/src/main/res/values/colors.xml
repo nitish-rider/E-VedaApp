@@ -16,5 +16,5 @@
     <color name="colorPrimaryDark">#FFA000</color>
     <color name="colorAccent">#573706</color>
     <color name="tab_selected">#fff</color>
-
+    <color name="blue_200">#0c0542</color>
 </resources>

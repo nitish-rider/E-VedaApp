@@ -15,10 +15,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import pradyumna.simhansapp.R
+import pradyumna.simhansapp.adapterFiles.PRvAdapter
 import pradyumna.simhansapp.adaptersFolders.RvClickHandler
 import pradyumna.simhansapp.viewModel.VedaDataViewModel
 import java.util.*
-import pradyumna.simhansapp.adapterFiles.PRvAdapter as PRvAdapter
 
 class Veda_Player : AppCompatActivity(),RvClickHandler {
 
@@ -34,23 +34,41 @@ class Veda_Player : AppCompatActivity(),RvClickHandler {
     lateinit var mVedaDataViewModel: VedaDataViewModel
     private var pause: Boolean = false
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+    }
+
     lateinit var items: Map<String, Any>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_veda__player)
+
+
+        supportActionBar?.setTitle("Veda Player")
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+
+
         mRecyclerView = findViewById(R.id.PlayerRv)
         player_file_name=findViewById(R.id.player_file_name)
         seekBar = findViewById(R.id.seekBar)
         play_Btn = findViewById(R.id.play_button)
         pauseBtn = findViewById(R.id.pause_button)
+
+
         mVedaDataViewModel = ViewModelProvider(this).get(VedaDataViewModel::class.java)
+
+
         val adapter = PRvAdapter(this)
         mRecyclerView.setAdapter(adapter)
         mRecyclerView.setLayoutManager(LinearLayoutManager(applicationContext))
+
+
         val intent = intent
         val name = intent.getStringExtra("Name")
         Log.d("intent", "Extras: $name")
-//        lifecycle.addObserver(mVedaDataViewModel)
+
         mVedaDataViewModel!!.getAllFileName(name).observe(this, { stringObjectMap ->
             if (stringObjectMap != null) {
                 items = stringObjectMap.toMap()
@@ -61,9 +79,8 @@ class Veda_Player : AppCompatActivity(),RvClickHandler {
         })
         play_Btn.setOnClickListener(View.OnClickListener {
             if (mediaPlayer!!.isPlaying) {
-                Toast.makeText(this,"Media already playing",Toast.LENGTH_SHORT).show()
-            }
-            else{
+                Toast.makeText(this, "Media already playing", Toast.LENGTH_SHORT).show()
+            } else {
                 mediaPlayer!!.start()
                 pauseBtn.visibility = View.VISIBLE
                 play_Btn.visibility = View.GONE
@@ -80,7 +97,7 @@ class Veda_Player : AppCompatActivity(),RvClickHandler {
             }
         })
 
-        seekBar.setOnSeekBarChangeListener(object :SeekBar.OnSeekBarChangeListener{
+        seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
                 if (p2) {
                     mediaPlayer.seekTo(p1 * 1000)
@@ -96,7 +113,7 @@ class Veda_Player : AppCompatActivity(),RvClickHandler {
             }
 
         })
-        seekBar.setMax(100)
+
     }
 
     override fun onItemClick(position: Int) {
@@ -108,13 +125,17 @@ class Veda_Player : AppCompatActivity(),RvClickHandler {
         mediaPlayer.start()
         pauseBtn.visibility = View.VISIBLE
         play_Btn.visibility = View.GONE
+        seekBar.setMax(mediaPlayer.duration)
         updateSeekBar()
     }
-
+    
 
     private val updater = Runnable {
         updateSeekBar()
+        val currentDuration = mediaPlayer.currentPosition.toLong()
     }
+
+
 
     private fun updateSeekBar() {
         if (mediaPlayer!!.isPlaying) {
@@ -139,6 +160,10 @@ class Veda_Player : AppCompatActivity(),RvClickHandler {
         }
         timerString = "$timerString$minutes:$secondString"
         return timerString
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
     }
 }
 

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blue_200"
 
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
@@ -22,6 +23,7 @@
             android:layout_height="wrap_content"
             android:text="Developed By:-"
             android:textAlignment="center"
+            android:textColor="#F1D548"
             android:textSize="30dp"
             android:textStyle="bold" />
 
@@ -29,6 +31,8 @@
             android:id="@+id/imageView19"
             android:layout_width="150dp"
             android:layout_height="150dp"
+            android:padding="10dp"
+            android:layout_gravity="center"
             android:src="@drawable/pradyumna" />
 
         <TextView
@@ -37,7 +41,8 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             android:text="PRADYUMNA.Y"
-            android:textColor="#000"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
             android:textSize="19dp"
             android:textStyle="bold" />
 
@@ -46,10 +51,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="9dp"
-            android:background="#573706"
+            android:textAlignment="center"
             android:padding="5dp"
-            android:text="Simhan's E-VedaShree has been developed by InnInc studios, an app development group led by PRADYUMNA.Y, who is a disciple of Vid. R Varada Simhan."
-            android:textColor="#fff"
+            android:text="@string/dev_pradyumna_details"
+            android:textColor="#F1D548"
             android:textSize="18dp" />
 
 
@@ -59,6 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:textColor="#F1D548"
             android:text="Revamped By:-"
             android:textAlignment="center"
             android:textSize="30dp"
@@ -67,7 +73,7 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:padding="20dp"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -87,8 +93,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
                     android:text="Nitish Kumar Sonthalia"
-                    android:textColor="#000"
+                    android:textColor="#F1D548"
                     android:textSize="16dp"
+                    android:layout_marginTop="10dp"
+
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -109,7 +117,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
                     android:text="Ashish Kumar Mishra"
-                    android:textColor="#000"
+                    android:textColor="#F1D548"
+                    android:layout_marginTop="10dp"
                     android:textSize="16dp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -119,10 +128,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="9dp"
-            android:background="#573706"
+            android:textAlignment="center"
             android:padding="5dp"
-            android:text="Simhan's E-VedaShree has been Revamped by Ashish Kumar Mishra and Nitish Kumar Sonthalia with Innic Studios."
-            android:textColor="#fff"
+            android:text="@string/DEV_2"
+            android:textColor="#F1D548"
             android:textSize="18dp" />
 
         <TextView
@@ -130,10 +139,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:background="#573706"
+            android:textAlignment="center"
             android:padding="5dp"
-            android:text="For further feedback and queries on the App's functionalities, please contact the developer. \nEmail: yogan.pradyumna@gmail.com \nPhone: +91-9066643299"
-            android:textColor="#fff"
+            android:text="@string/dev_3"
+            android:textColor="#F1D548"
             android:textSize="18dp" />
     </LinearLayout>
 

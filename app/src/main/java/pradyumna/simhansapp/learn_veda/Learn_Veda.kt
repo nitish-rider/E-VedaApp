@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import pradyumna.simhansapp.R
 import pradyumna.simhansapp.adaptersFolders.RvAdapter
@@ -25,7 +26,8 @@ class Learn_Veda : AppCompatActivity(), RvClickHandler {
         mVedasFolderViewModel = ViewModelProviders.of(this).get(VedasFolderViewModel::class.java)
         val adapter = RvAdapter(this)
         recyclerView.setAdapter(adapter)
-        val layoutManager = GridLayoutManager(this, 2)
+        val layoutManager =LinearLayoutManager(applicationContext)
+//                GridLayoutManager(this, 2)
         recyclerView.setLayoutManager(layoutManager)
         if (mVedasFolderViewModel!!.allFolderName != null) {
             mVedasFolderViewModel!!.allFolderName.observe(this, { strings ->
