@@ -22,4 +22,13 @@
     <style name="Theme.Evedas.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.Evedas.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="MyTheme" parent="@style/Theme.Design.Light">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+    </style>
+
+    <style name="MyActionBar" parent="@style/Theme.Design.Light">
+        <item name="android:background">#F1D548</item>
+    </style>
 </resources>

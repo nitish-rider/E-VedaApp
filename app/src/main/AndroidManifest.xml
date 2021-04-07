@@ -61,14 +61,16 @@
         </activity>
         <activity
             android:name=".feedback.Feedback"
-            android:label="@string/title_activity_feedback">
+            android:label="@string/title_activity_feedback"
+            android:parentActivityName=".MainActivity">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
             android:name=".contact.Contact"
-            android:label="@string/title_activity_contact">
+            android:label="@string/title_activity_contact"
+            android:parentActivityName=".MainActivity">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -82,42 +84,48 @@
         </activity>
         <activity
             android:name=".instructions.Instructions"
-            android:label="@string/title_activity_instructions">
+            android:label="@string/title_activity_instructions"
+            android:parentActivityName=".MainActivity">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
             android:name=".learn_veda.Learn_Veda"
-            android:label="@string/title_activity_veda_folders">
+            android:label="@string/title_activity_veda_folders"
+            android:parentActivityName=".MainActivity">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
             android:name=".developers.Developers"
-            android:label="@string/title_activity_developers">
+            android:label="@string/title_activity_developers"
+            android:parentActivityName=".MainActivity">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
             android:name=".about.About"
-            android:label="@string/title_activity_about">
+            android:label="@string/title_activity_about"
+            android:parentActivityName=".MainActivity">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
             android:name=".sthotas.Sthotras"
-            android:label="@string/title_activity_sthothram">
+            android:label="@string/title_activity_sthothram"
+            android:parentActivityName=".MainActivity">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
             android:name=".prateekas.Prateekas"
-            android:label="@string/title_activity_prateekas">
+            android:label="@string/title_activity_prateekas"
+            android:parentActivityName=".MainActivity">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

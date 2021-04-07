@@ -17,4 +17,6 @@
     <color name="colorAccent">#573706</color>
     <color name="tab_selected">#fff</color>
     <color name="blue_200">#0c0542</color>
+    <color name="orangeMain">#F1D548</color>
+    <color name="SplashBackground">#0404B4</color>
 </resources>

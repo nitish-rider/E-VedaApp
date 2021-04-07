@@ -10,13 +10,13 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/blue_200">
+        android:background="#F1D548">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:background="@color/blue_200"
-            app:titleTextColor="#F1D548"
+            android:background="#F1D548"
+            app:titleTextColor="#000"
             android:layout_height="?attr/actionBarSize">
 
         </androidx.appcompat.widget.Toolbar>
@@ -25,10 +25,10 @@
 
         <com.google.android.material.tabs.TabLayout
             android:layout_width="match_parent"
-            app:tabSelectedTextColor="#F1D548"
+            app:tabSelectedTextColor="@color/white"
             android:layout_height="wrap_content"
             android:id="@+id/tabs"
-            app:tabTextColor="@color/white"
+            app:tabTextColor="#000"
             app:tabMode="fixed"
             app:tabGravity="fill"/>
 
@@ -42,12 +42,5 @@
 
     <include layout="@layout/content_main" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

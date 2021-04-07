@@ -9,23 +9,18 @@
     android:orientation="vertical"
     tools:context=".learn_veda.Veda_Player">
 
-<!--    <androidx.appcompat.widget.Toolbar-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="?attr/actionBarSize"/>-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/PlayerRv"
         android:layout_width="match_parent"
-        android:padding="10dp"
-        android:layout_height="match_parent"
-        android:layout_weight="3"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
         tools:listitem="@layout/player_recycler_view_item" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-
         android:layout_gravity="bottom">
 
         <SeekBar

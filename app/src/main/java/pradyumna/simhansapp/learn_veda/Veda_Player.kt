@@ -1,11 +1,15 @@
 package pradyumna.simhansapp.learn_veda
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.media.MediaPlayer
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import android.view.View
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.SeekBar
 import android.widget.TextView
@@ -18,7 +22,6 @@ import pradyumna.simhansapp.R
 import pradyumna.simhansapp.adapterFiles.PRvAdapter
 import pradyumna.simhansapp.adaptersFolders.RvClickHandler
 import pradyumna.simhansapp.viewModel.VedaDataViewModel
-import java.util.*
 
 class Veda_Player : AppCompatActivity(),RvClickHandler {
 
@@ -40,11 +43,28 @@ class Veda_Player : AppCompatActivity(),RvClickHandler {
 
     lateinit var items: Map<String, Any>
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        //Status bar Color
+        if (Build.VERSION.SDK_INT >= 21) {
+            val window = this.window
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+            window.statusBarColor = this.resources.getColor(R.color.orangeMain)
+        }
+
+        //Action Bar Object
+        val actionBar = supportActionBar
+
+        // Define ColorDrawable object and parse color
+        val colorDrawable = ColorDrawable(Color.parseColor("#F1D548"))
+
+        // Set BackgroundDrawable
+        actionBar!!.setBackgroundDrawable(colorDrawable)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_veda__player)
 
 
-        supportActionBar?.setTitle("Veda Player")
+        supportActionBar?.title = "Veda Player"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
@@ -61,8 +81,8 @@ class Veda_Player : AppCompatActivity(),RvClickHandler {
 
 
         val adapter = PRvAdapter(this)
-        mRecyclerView.setAdapter(adapter)
-        mRecyclerView.setLayoutManager(LinearLayoutManager(applicationContext))
+        mRecyclerView.adapter = adapter
+        mRecyclerView.layoutManager = LinearLayoutManager(applicationContext)
 
 
         val intent = intent
