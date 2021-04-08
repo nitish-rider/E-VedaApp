@@ -29,11 +29,6 @@ public class PrabandhamDataViewModel extends AndroidViewModel {
         getFileName("Learn Prabandham", Doc);
         return FileData;
     }
-
-    public Map<String, Object> getDocData() {
-        return DocData;
-    }
-
     public void getFileName(String type, String doc) {
         DocumentReference docref = db.collection(type).document(doc);
         docref.get()

@@ -84,7 +84,7 @@ public class Prabandham extends AppCompatActivity implements RvClickHandler {
 
     @Override
     public void onItemClick(int position) {
-        Intent intent=new Intent(Prabandham.this, Veda_Player.class);
+        Intent intent=new Intent(Prabandham.this, Prabandham_Player.class);
         intent.putExtra("Name",items.get(position));
         startActivity(intent);
     }

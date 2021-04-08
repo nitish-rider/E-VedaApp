@@ -31,9 +31,6 @@ public class SthotasDataViewModel extends AndroidViewModel {
         return FileData;
     }
 
-    public Map<String, Object> getDocData() {
-        return DocData;
-    }
     public void getFileName(String type, String doc) {
         DocumentReference docref = db.collection(type).document(doc);
         docref.get()

@@ -15,6 +15,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
         <activity
+            android:name=".sthotas.Sthotras_Player"
+            android:parentActivityName=".sthotas.Sthotras" />
+        <activity
+            android:name=".prabandham.Prabandham_Player"
+            android:parentActivityName=".prabandham.Prabandham" />
+        <activity
             android:name=".splash.Splash1"
             android:label="@string/app_name"
             android:screenOrientation="portrait"

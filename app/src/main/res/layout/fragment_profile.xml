@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="@color/blue_200"
+    android:background="@color/background_Main"
     android:orientation="vertical"
     android:paddingTop="10dp"
     android:paddingLeft="10dp"
@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:text="Lineage"
-            android:background="#F1D548"
+            android:background="@drawable/gradient"
             android:textColor="#000"
             android:id="@+id/button" />
 
@@ -40,7 +40,7 @@
             android:padding="5dp"
             android:lineSpacingExtra="3dp"
             android:textSize="15sp"
-            android:textColor="#F1D548"
+            android:textColor="@color/Text_Main"
 
             android:text="@string/profile"
             android:id="@+id/textView2" />
@@ -56,7 +56,7 @@
             android:layout_height="40dp"
             android:text="Paternal Grandparents \nSmt.Aandal and Sri.S.Seshaadri Iyengar"
             android:layout_margin="5dp"
-            android:background="#F1D548"
+            android:background="@drawable/gradient"
             android:textColor="#000"
 
             android:id="@+id/button8"
@@ -72,7 +72,7 @@
             android:layout_height="40dp"
             android:text="Maternal Grandparents \nSmt.Pushpavalli and Sri.T.E.Krishnamachariar"
             android:layout_margin="5dp"
-            android:background="#F1D548"
+            android:background="@drawable/gradient"
             android:textColor="#000"
             android:id="@+id/button9"
             android:layout_gravity="center_horizontal" />
@@ -87,7 +87,7 @@
             android:layout_height="40dp"
             android:text="Parents \nSmt.Kanakavalli and Sri.S.Raaghavan"
             android:layout_margin="5dp"
-            android:background="#F1D548"
+            android:background="@drawable/gradient"
             android:textColor="#000"
             android:id="@+id/button10"
             android:layout_gravity="center_horizontal" />
@@ -104,7 +104,7 @@
             android:layout_height="40dp"
             android:text="Career"
             android:layout_margin="5dp"
-            android:background="#F1D548"
+            android:background="@drawable/gradient"
             android:textColor="#000"
             android:id="@+id/button2" />
 
@@ -115,7 +115,7 @@
             android:padding="5dp"
             android:lineSpacingExtra="3dp"
             android:textSize="15sp"
-            android:textColor="#F1D548"
+            android:textColor="@color/Text_Main"
             android:text="@string/career"
             android:id="@+id/textView3" />
 
@@ -130,7 +130,7 @@
             android:layout_height="40dp"
             android:text="Vid Sri.H. Srinivasaachar"
             android:layout_margin="5dp"
-            android:background="#F1D548"
+            android:background="@drawable/gradient"
             android:textColor="#000" />
 
         <ImageView
@@ -144,7 +144,7 @@
             android:layout_height="40dp"
             android:text="Vid Sri.T.A.Sheshadri"
             android:layout_margin="5dp"
-            android:background="#F1D548"
+            android:background="@drawable/gradient"
             android:textColor="#000" />
 
         <ImageView
@@ -159,7 +159,7 @@
             android:layout_height="40dp"
             android:text="Vid. Prof.  R K Srikantakumaraswamy"
             android:layout_margin="5dp"
-            android:background="#F1D548"
+            android:background="@drawable/gradient"
             android:textColor="#000" />
 
         <View
@@ -175,7 +175,7 @@
             android:text="Vidwan's Forewords"
             android:padding="5dp"
             android:layout_margin="5dp"
-            android:background="#F1D548"
+            android:background="@drawable/gradient"
             android:textColor="#000"
             android:id="@+id/button3" />
         <TextView
@@ -184,7 +184,7 @@
             android:textAlignment="gravity"
             android:lineSpacingExtra="3dp"
             android:textSize="15sp"
-            android:textColor="#F1D548"
+            android:textColor="@color/Text_Main"
             android:text="@string/dedication"
             android:id="@+id/textView4" />
 

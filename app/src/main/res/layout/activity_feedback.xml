@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue_200"
+    android:background="@color/background_Main"
     android:orientation="vertical"
     android:padding="10dp">
 
@@ -13,16 +13,17 @@
         android:text="@string/feedback_page_1"
         android:id="@+id/textView7"
         android:textSize="18sp"
-        android:textColor="#F1D548"
+        android:textColor="@color/Text_Main"
 />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editText"
+        android:background="@drawable/border"
         android:layout_marginTop="20dp"
         android:hint="Name"
-        android:textColorHint="#F1D548"
+        android:textColorHint="@color/Text_Main"
         android:padding="10dp"
         android:textColor="#F1D548"
         android:textColorHighlight="#F1D548" />
@@ -30,8 +31,9 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/border"
         android:id="@+id/editText2"
-        android:textColorHint="#F1D548"
+        android:textColorHint="@color/Text_Main"
         android:hint="Email"
         android:layout_marginTop="20dp"
         android:padding="10dp" />
@@ -39,8 +41,9 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/border"
         android:id="@+id/editText3"
-        android:textColorHint="#F1D548"
+        android:textColorHint="@color/Text_Main"
         android:hint="Phone No."
         android:layout_marginTop="20dp"
         android:padding="10dp" />
@@ -48,7 +51,8 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:textColorHint="#F1D548"
+        android:background="@drawable/border"
+        android:textColorHint="@color/Text_Main"
         android:id="@+id/editText4"
         android:hint="Message"
         android:textAlignment="center"
@@ -62,8 +66,8 @@
         android:id="@+id/button5"
         android:textSize="15sp"
         android:layout_marginTop="20dp"
-        android:textColor="#F1D548"
-        android:background="@color/blue_200"
+        android:textColor="#000"
+        android:background="@drawable/gradient"
         android:layout_marginBottom="51dp" />
 
 </LinearLayout>

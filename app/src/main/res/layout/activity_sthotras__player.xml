@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/background_Main"
     android:orientation="vertical"
-    tools:context=".learn_veda.Veda_Player">
-
+    android:layout_height="match_parent"
+    tools:context=".sthotas.Sthotras_Player">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/PlayerRv"
+        android:id="@+id/PlayerRvSS"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
+        android:layout_weight="1"
         tools:listitem="@layout/player_recycler_view_item" />
 
     <LinearLayout
@@ -24,7 +22,7 @@
         android:layout_gravity="bottom">
 
         <SeekBar
-            android:id="@+id/seekBar"
+            android:id="@+id/seekBarSS"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -46,12 +44,12 @@
             android:layout_height="match_parent"
             android:layout_weight="2"
             android:textSize="20sp"
-            android:id="@+id/player_file_name"/>
+            android:id="@+id/player_file_nameSS"/>
 
         <Button
             android:layout_width="60dp"
             android:layout_height="40dp"
-            android:id="@+id/play_button"
+            android:id="@+id/play_buttonSS"
             android:visibility="visible"
             android:background="@drawable/player_icon"
             android:layout_weight="1"/>
@@ -59,7 +57,7 @@
         <Button
             android:layout_width="60dp"
             android:layout_height="40dp"
-            android:id="@+id/pause_button"
+            android:id="@+id/pause_buttonSS"
             android:visibility="gone"
             android:background="@drawable/pause_icon"
             android:layout_weight="1"/>
@@ -67,8 +65,5 @@
 
 
     </LinearLayout>
-
-
-
 
 </LinearLayout>

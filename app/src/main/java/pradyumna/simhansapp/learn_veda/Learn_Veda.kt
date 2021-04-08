@@ -46,6 +46,8 @@ class Learn_Veda : AppCompatActivity(), RvClickHandler {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+
         recyclerView = findViewById(R.id.lvrecyclerView)
         mVedasFolderViewModel = ViewModelProviders.of(this).get(VedasFolderViewModel::class.java)
         val adapter = RvAdapter(this)

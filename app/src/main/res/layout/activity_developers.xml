@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue_200"
+    android:background="@color/background_Main"
 
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:text="Developed By:-"
             android:textAlignment="center"
-            android:textColor="#F1D548"
+            android:textColor="@color/Text_Main"
             android:textSize="30dp"
             android:textStyle="bold" />
 
@@ -42,7 +42,7 @@
             android:layout_marginRight="10dp"
             android:text="PRADYUMNA.Y"
             android:layout_gravity="center"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="19dp"
             android:textStyle="bold" />
 
@@ -51,10 +51,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="9dp"
+            android:background="@drawable/border"
             android:textAlignment="center"
             android:padding="5dp"
             android:text="@string/dev_pradyumna_details"
-            android:textColor="#F1D548"
+            android:textColor="@color/Text_Main"
             android:textSize="18dp" />
 
 
@@ -64,7 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:textColor="#F1D548"
+            android:textColor="@color/Text_Main"
             android:text="Revamped By:-"
             android:textAlignment="center"
             android:textSize="30dp"
@@ -93,7 +94,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
                     android:text="Nitish Kumar Sonthalia"
-                    android:textColor="#F1D548"
+                    android:textColor="#000"
                     android:textSize="16dp"
                     android:layout_marginTop="10dp"
 
@@ -117,7 +118,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
                     android:text="Ashish Kumar Mishra"
-                    android:textColor="#F1D548"
+                    android:textColor="#000"
                     android:layout_marginTop="10dp"
                     android:textSize="16dp"
                     android:textStyle="bold" />
@@ -129,9 +130,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="9dp"
             android:textAlignment="center"
+            android:background="@drawable/border"
             android:padding="5dp"
             android:text="@string/DEV_2"
-            android:textColor="#F1D548"
+            android:textColor="@color/Text_Main"
             android:textSize="18dp" />
 
         <TextView
@@ -140,9 +142,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:textAlignment="center"
+            android:background="@drawable/border"
             android:padding="5dp"
             android:text="@string/dev_3"
-            android:textColor="#F1D548"
+            android:textColor="@color/Text_Main"
             android:textSize="18dp" />
     </LinearLayout>
 

@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@color/blue_200"
+    android:background="@color/background_Main"
     android:paddingTop="10dp"
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:text="About"
-            android:background="#F1D548"
+            android:background="@drawable/gradient"
             android:textColor="#000"
             android:id="@+id/button"
             android:padding="5dp" />
@@ -37,7 +37,7 @@
             android:padding="5dp"
             android:lineSpacingExtra="3dp"
             android:textSize="15sp"
-            android:textColor="#F1D548"
+            android:textColor="@color/Text_Main"
             android:text="@string/about_veda"
             android:id="@+id/textView2"/>
 
@@ -46,7 +46,7 @@
             android:layout_height="40dp"
             android:text="Origin"
             android:layout_margin="5dp"
-            android:background="#F1D548"
+            android:background="@drawable/gradient"
             android:textColor="#000"
             android:id="@+id/button2"
             android:padding="5dp" />
@@ -57,7 +57,7 @@
             android:padding="5dp"
             android:lineSpacingExtra="3dp"
             android:textSize="15sp"
-            android:textColor="#F1D548"
+            android:textColor="@color/Text_Main"
             android:text="@string/origin"
             android:id="@+id/textView3" />
 
@@ -66,7 +66,7 @@
             android:layout_height="40dp"
             android:text="Classification"
             android:layout_margin="5dp"
-            android:background="#F1D548"
+            android:background="@drawable/gradient"
             android:textColor="#000"
             android:id="@+id/button3"
             android:padding="5dp" />
@@ -77,7 +77,7 @@
             android:padding="5dp"
             android:lineSpacingExtra="3dp"
             android:textSize="15sp"
-            android:textColor="#F1D548"
+            android:textColor="@color/Text_Main"
             android:text="@string/classification"
             android:id="@+id/textView4" />
 
@@ -86,7 +86,7 @@
             android:layout_height="40dp"
             android:text="Components"
             android:layout_margin="5dp"
-            android:background="#F1D548"
+            android:background="@drawable/gradient"
             android:textColor="#000"
             android:id="@+id/button4"
             android:padding="5dp" />
@@ -97,7 +97,7 @@
             android:padding="5dp"
             android:lineSpacingExtra="3dp"
             android:textSize="15sp"
-            android:textColor="#F1D548"
+            android:textColor="@color/Text_Main"
             android:text="@string/components"
             android:id="@+id/textView5" />
 

@@ -51,6 +51,7 @@ public class Sthotras extends AppCompatActivity implements RvClickHandler {
                 = new ColorDrawable(Color.parseColor("#F1D548"));
 
         // Set BackgroundDrawable
+        assert actionBar != null;
         actionBar.setBackgroundDrawable(colorDrawable);
 
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -86,7 +87,7 @@ public class Sthotras extends AppCompatActivity implements RvClickHandler {
 
     @Override
     public void onItemClick(int position) {
-        Intent intent=new Intent(Sthotras.this, Veda_Player.class);
+        Intent intent=new Intent(Sthotras.this, Sthotras_Player.class);
         intent.putExtra("Name",items.get(position));
         startActivity(intent);
     }

@@ -8,13 +8,14 @@
     android:paddingLeft="10dp"
     android:paddingTop="10dp"
     android:paddingRight="10dp"
-    android:background="@color/blue_200"
+    android:background="@color/background_Main"
     android:paddingBottom="0dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="@drawable/border"
         android:padding="10dp">
 
 
@@ -23,9 +24,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:background="@drawable/border"
             android:padding="5dp"
             android:text="Instructions for quality learning"
-            android:textColor="#F1D548"
+            android:textColor="#000"
             android:textSize="18sp" />
 
         <TextView
@@ -33,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
-            android:textColor="#F1D548"
+            android:textColor="@color/Text_Main"
             android:text="@string/Instruction_1"
             android:textSize="17sp" />
 
@@ -43,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:text="@string/Instruction2"
-            android:textColor="#F1D548"
+            android:textColor="@color/Text_Main"
             android:textSize="17sp" />
 
         <TextView
@@ -52,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:text="@string/Instructions3"
-            android:textColor="#F1D548"
+            android:textColor="@color/Text_Main"
             android:textSize="17sp" />
 
         <TextView
@@ -61,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:text="@string/inst4"
-            android:textColor="#F1D548"
+            android:textColor="@color/Text_Main"
             android:textSize="17sp" />
 
         <TextView
@@ -70,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:text="@string/inst5"
-            android:textColor="#F1D548"
+            android:textColor="@color/Text_Main"
             android:textSize="17sp" />
 
         <TextView
@@ -78,7 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:text="@string/inst6"
-            android:textColor="#F1D548"
+            android:textColor="@color/Text_Main"
             android:textSize="17sp" />
 
     </LinearLayout>

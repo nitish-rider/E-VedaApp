@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@color/blue_200"
+    android:background="@color/background_Main"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_contact"
     android:orientation="vertical">
@@ -19,7 +19,9 @@
         android:layout_height="wrap_content"
         android:text="R. VARADA SIMHAN"
         android:layout_gravity="center_horizontal"
-        android:textColor="#fff"
+        android:background="@drawable/border"
+        android:padding="5dp"
+        android:textColor="#000"
         android:textSize="19dp"
         android:id="@+id/button3"/>
 
@@ -33,14 +35,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageView"
+            android:padding="5dp"
             android:layout_gravity="center"
-            android:src="@drawable/home_icon" />
+            android:src="@drawable/home" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/border"
             android:text="No.376, Saamagaanapriya, Vishwapatha Road, A and B Block Kuvempunagar Mysore - 570023. Karnataka."
             android:textSize="19dp"
-            android:textColor="#F1D548"
+            android:textColor="@color/Text_Main"
             android:padding="10dp"
             android:id="@+id/textView4" />
 
@@ -57,15 +61,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imagePhn"
+            android:padding="5dp"
             android:layout_gravity="center"
-            android:src="@drawable/phone" />
+            android:src="@drawable/phone_call" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/border"
             android:text="+91-9448051399"
             android:textSize="19dp"
-            android:textColor="#F1D548"
+            android:textColor="@color/Text_Main"
             android:padding="10dp"
             android:textAlignment="gravity"
             android:id="@+id/textView5" />
@@ -83,6 +89,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:id="@+id/imageView4"
+            android:padding="5dp"
             android:src="@drawable/email"
             android:layout_gravity="center" />
 
@@ -90,8 +97,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="evedashree@gmail.com"
+            android:background="@drawable/border"
             android:textSize="19dp"
-            android:textColor="#F1D548"
+            android:textColor="@color/Text_Main"
             android:padding="10dp"
             android:id="@+id/textView6" />
 
