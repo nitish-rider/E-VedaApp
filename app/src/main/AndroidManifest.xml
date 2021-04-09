@@ -15,6 +15,14 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
         <activity
+            android:name=".learn_veda.Veda_Player"
+            android:label="@string/title_activity_learn_vedas"
+            android:parentActivityName=".learn_veda.Learn_Veda">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".sthotas.Sthotras_Player"
             android:parentActivityName=".sthotas.Sthotras" />
         <activity
@@ -46,14 +54,6 @@
             <intent-filter>
                 <action android:name="pradyumna.simhansapp.MainActivity" />
 
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".learn_veda.Veda_Player"
-            android:label="@string/title_activity_learn_vedas"
-            android:parentActivityName=".learn_veda.Learn_Veda">
-            <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

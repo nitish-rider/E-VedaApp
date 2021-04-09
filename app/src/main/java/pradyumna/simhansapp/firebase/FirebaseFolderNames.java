@@ -16,12 +16,10 @@ import java.util.ArrayList;
 
 public class FirebaseFolderNames {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-    MutableLiveData<ArrayList<String>> FolderName;
-    ArrayList<String> folderName;
+    MutableLiveData<ArrayList<String>> FolderName=new MutableLiveData<>();
+    ArrayList<String> folderName=new ArrayList<>();
 
     public MutableLiveData<ArrayList<String>> getFolderName(String type) {
-        FolderName = new MutableLiveData<ArrayList<String>>();
-        folderName = new ArrayList<String>();
         db.collection(type)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -34,7 +32,7 @@ public class FirebaseFolderNames {
                                     folderName.add(document.getId());
                                 }
                             }
-                            FolderName.setValue(folderName);
+                            FolderName.postValue(folderName);
                         } else {
                             Log.d("TAG", "OnNoData");
                         }

@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_Main"
+    android:orientation="vertical"
     tools:context=".learn_veda.Learn_Veda">
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/lvrecyclerView"

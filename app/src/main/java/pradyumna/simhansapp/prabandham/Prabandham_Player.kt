@@ -26,6 +26,14 @@ import pradyumna.simhansapp.viewModel.VedaDataViewModel
 
 class Prabandham_Player : AppCompatActivity(),RvClickHandler{
 
+    override fun onBackPressed(){
+        super.onBackPressed()
+        if(mediaPlayer.isPlaying){
+            mediaPlayer.stop()
+        }
+
+    }
+
     lateinit var seekBar: SeekBar
     lateinit var play_Btn: Button
     lateinit var mediaPlayer: MediaPlayer
@@ -38,9 +46,7 @@ class Prabandham_Player : AppCompatActivity(),RvClickHandler{
     lateinit var mPrabandhamDataViewModel: PrabandhamDataViewModel
     private var pause: Boolean = false
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-    }
+
 
     lateinit var items: Map<String, Any>
 
@@ -95,10 +101,10 @@ class Prabandham_Player : AppCompatActivity(),RvClickHandler{
             }
         })
         play_Btn.setOnClickListener(View.OnClickListener {
-            if (mediaPlayer!!.isPlaying) {
+            if (mediaPlayer.isPlaying) {
                 Toast.makeText(this, "Media already playing", Toast.LENGTH_SHORT).show()
             } else {
-                mediaPlayer!!.start()
+                mediaPlayer.start()
                 pauseBtn.visibility = View.VISIBLE
                 play_Btn.visibility = View.GONE
                 updateSeekBar()
@@ -106,9 +112,9 @@ class Prabandham_Player : AppCompatActivity(),RvClickHandler{
         })
 
         pauseBtn.setOnClickListener(View.OnClickListener {
-            if (mediaPlayer!!.isPlaying) {
+            if (mediaPlayer.isPlaying) {
                 handler.removeCallbacks(updater)
-                mediaPlayer!!.pause()
+                mediaPlayer.pause()
                 pauseBtn.visibility = View.GONE
                 play_Btn.visibility = View.VISIBLE
             }
@@ -117,16 +123,14 @@ class Prabandham_Player : AppCompatActivity(),RvClickHandler{
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
                 if (p2) {
-                    mediaPlayer.seekTo(p1 * 1000)
+                    mediaPlayer.seekTo(((p1/100.0) *mediaPlayer.duration).toInt())
                 }
             }
 
             override fun onStartTrackingTouch(p0: SeekBar?) {
-                TODO("Not yet implemented")
             }
 
             override fun onStopTrackingTouch(p0: SeekBar?) {
-                TODO("Not yet implemented")
             }
 
         })
@@ -142,7 +146,6 @@ class Prabandham_Player : AppCompatActivity(),RvClickHandler{
         mediaPlayer.start()
         pauseBtn.visibility = View.VISIBLE
         play_Btn.visibility = View.GONE
-        seekBar.setMax(mediaPlayer.duration)
         updateSeekBar()
     }
 
@@ -155,31 +158,17 @@ class Prabandham_Player : AppCompatActivity(),RvClickHandler{
 
 
     private fun updateSeekBar() {
-        if (mediaPlayer!!.isPlaying) {
-            seekBar!!.progress = (mediaPlayer!!.currentPosition.toFloat() / mediaPlayer!!.duration * 100).toInt()
+        if (mediaPlayer.isPlaying) {
+            seekBar.progress = (mediaPlayer.currentPosition.toFloat() / mediaPlayer.duration * 100).toInt()
             handler.postDelayed(updater, 1000)
         }
     }
 
-    private fun milliSecondToTimer(milliSeconds: Long): String {
-        var timerString = ""
-        val secondString: String
-        val hours = (milliSeconds / (1000 * 60 * 60)).toInt()
-        val minutes = (milliSeconds % (1000 * 60 * 60)).toInt() / (1000 * 60)
-        val seconds = (milliSeconds % (1000 * 60 * 60) / (1000 * 60) / 1000).toInt()
-        if (hours > 0) {
-            timerString = "$hours:"
-        }
-        secondString = if (minutes < 10) {
-            "0$seconds"
-        } else {
-            "" + seconds
-        }
-        timerString = "$timerString$minutes:$secondString"
-        return timerString
-    }
-
     override fun onDestroy() {
         super.onDestroy()
+        mediaPlayer.stop();
+        mediaPlayer.release()
     }
+
+
 }
