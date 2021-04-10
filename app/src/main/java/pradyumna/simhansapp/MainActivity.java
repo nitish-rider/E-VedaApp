@@ -63,8 +63,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         ViewPager viewPager= findViewById(R.id.viewPager);
-//        setupViewPager(viewPager);
-
         TabLayout tabLayout=findViewById(R.id.tabs);
         tabLayout.addTab(tabLayout.newTab().setText("Profile"));
         tabLayout.addTab(tabLayout.newTab().setText("vedas"));
@@ -220,10 +218,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             super.onBackPressed();
         }
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu.main, menu);
+//        return true;
+//    }
 }
