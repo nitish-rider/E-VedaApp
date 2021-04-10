@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,134 +7,27 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
+    android:orientation="vertical"
     android:background="@color/background_Main"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_prateekas">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="In Vedas, there are 2 parts, Mantra and Braamhana. In mantra, certain texts have been given in short forms. We need to expand by inserting relevant portions of mantras which are found  else where in the Vedas. Such short forms are called prateekas. They need to be elaborated for learning purpose."
-            android:layout_alignParentTop="true"
-            android:id="@+id/abtPratheekas"/>
+            android:textColor="@color/Text_Main"
+            android:text="@string/prateekas_top" />
 
-        <Button
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:text="Aruna Prateeka Part 1 (Kannada)"
-            android:background="@color/colorAccent"
-            android:textColor="#fff"
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:layout_marginTop="10dp"
-            android:padding="5dp"
-            android:layout_below="@+id/abtPratheekas"
-            android:id="@+id/arunaPrateeka1Btn"
+            android:id="@+id/prateekasRV"
+            android:padding="10dp"
+            tools:listitem="@layout/prateekas_item_view"
+            />
 
-            android:layout_centerHorizontal="true" />
-
-        <Button
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:text="Aruna Prateeka Part 2 (Kannada)"
-            android:background="@color/colorAccent"
-            android:textColor="#fff"
-            android:layout_marginTop="10dp"
-            android:padding="5dp"
-            android:id="@+id/arunaPrateeka2Btn"
-            android:layout_below="@+id/arunaPrateeka1Btn"
-            android:layout_centerHorizontal="true" />
-
-        <Button
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:text="Aruna Prateeka Part 3 (Kannada)"
-            android:background="@color/colorAccent"
-            android:textColor="#fff"
-            android:layout_marginTop="10dp"
-            android:padding="5dp"
-            android:id="@+id/arunaPrateeka3Btn"
-            android:layout_below="@+id/arunaPrateeka2Btn"
-            android:layout_centerHorizontal="true" />
-
-        <Button
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:text="Aruna Prateeka Part 4 (Kannada)"
-            android:background="@color/colorAccent"
-            android:textColor="#fff"
-            android:layout_marginTop="10dp"
-            android:padding="5dp"
-            android:id="@+id/arunaPrateeka4Btn"
-            android:layout_below="@+id/arunaPrateeka3Btn"
-            android:layout_centerHorizontal="true" />
-
-        <Button
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:text="Aruna Prateeka (Sanskrit)"
-            android:background="@color/colorAccent"
-            android:textColor="#fff"
-            android:layout_marginTop="10dp"
-            android:padding="5dp"
-            android:id="@+id/arunaPrateekaSansBtn"
-            android:layout_below="@+id/arunaPrateeka4Btn"
-            android:layout_centerHorizontal="true" />
-
-        <Button
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:text="Achidram Prateeka (Kannada)"
-            android:background="@color/colorAccent"
-            android:textColor="#fff"
-            android:layout_marginTop="10dp"
-            android:padding="5dp"
-            android:id="@+id/achidramPrateekaKanBtn"
-            android:layout_below="@+id/arunaPrateekaSansBtn"
-            android:layout_centerHorizontal="true" />
-
-        <Button
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:text="Achidram Prateeka (Sanskrit)"
-            android:background="@color/colorAccent"
-            android:textColor="#fff"
-            android:layout_marginTop="10dp"
-            android:padding="5dp"
-            android:id="@+id/achidramPrateekaSanBtn"
-            android:layout_below="@+id/achidramPrateekaKanBtn"
-            android:layout_centerHorizontal="true" />
-
-        <Button
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:text="Mahaanaaraayna Prateeka (Kannada)"
-            android:background="@color/colorAccent"
-            android:textColor="#fff"
-            android:layout_marginTop="10dp"
-            android:padding="5dp"
-            android:id="@+id/mnPrateekaKanBtn"
-            android:layout_below="@+id/achidramPrateekaSanBtn"
-            android:layout_centerHorizontal="true" />
-
-        <Button
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:text="Mahaanaaraayna Prateeka (Sanskrit)"
-            android:background="@color/colorAccent"
-            android:textColor="#fff"
-            android:layout_marginTop="10dp"
-            android:padding="5dp"
-            android:id="@+id/mnPrateekaSanBtn"
-            android:layout_below="@+id/mnPrateekaKanBtn"
-            android:layout_centerHorizontal="true" />
-
-
-
-    </LinearLayout>
-
-</ScrollView>
+</LinearLayout>

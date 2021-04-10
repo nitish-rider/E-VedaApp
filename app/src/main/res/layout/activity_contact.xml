@@ -17,12 +17,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="R. VARADA SIMHAN"
+        android:text="Vid. R. VARADA SIMHAN"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/border"
         android:padding="5dp"
         android:textColor="#000"
-        android:textSize="19dp"
+        android:textSize="19sp"
         android:id="@+id/button3"/>
 
     <LinearLayout
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/border"
             android:text="No.376, Saamagaanapriya, Vishwapatha Road, A and B Block Kuvempunagar Mysore - 570023. Karnataka."
-            android:textSize="19dp"
+            android:textSize="19sp"
             android:textColor="@color/Text_Main"
             android:padding="10dp"
             android:id="@+id/textView4" />
@@ -70,7 +70,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/border"
             android:text="+91-9448051399"
-            android:textSize="19dp"
+            android:textSize="19sp"
             android:textColor="@color/Text_Main"
             android:padding="10dp"
             android:textAlignment="gravity"
@@ -98,7 +98,7 @@
             android:layout_height="wrap_content"
             android:text="evedashree@gmail.com"
             android:background="@drawable/border"
-            android:textSize="19dp"
+            android:textSize="19sp"
             android:textColor="@color/Text_Main"
             android:padding="10dp"
             android:id="@+id/textView6" />

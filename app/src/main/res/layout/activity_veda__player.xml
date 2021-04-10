@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:layout_height="match_parent"
-    tools:context=".learn_veda.Veda_Player">
+    android:layout_height="match_parent">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/PlayerRv"
+        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
@@ -20,6 +20,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="bottom">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="00:00"
+            android:id="@+id/player_time_start"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
 
         <SeekBar
             android:id="@+id/seekBar"
@@ -31,6 +38,13 @@
             android:progressTint="#000000"
             android:layout_marginStart="2dp"
             android:layout_marginEnd="2dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="00:00"
+            android:id="@+id/player_time_end"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
 
     </LinearLayout>
 
@@ -49,21 +63,45 @@
             android:id="@+id/player_file_name"/>
 
         <Button
-            android:layout_width="60dp"
+            android:layout_width="70dp"
             android:layout_height="40dp"
+            android:padding="5dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/back10sec"
+            android:background="@drawable/back_10_sec"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:padding="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:id="@+id/play_button"
             android:visibility="visible"
             android:background="@drawable/player_icon"
             android:layout_weight="1"/>
 
         <Button
-            android:layout_width="60dp"
-            android:layout_height="40dp"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:padding="5dp"
+            android:layout_marginLeft="10dp"
             android:id="@+id/pause_button"
             android:visibility="gone"
+            android:layout_marginRight="10dp"
             android:background="@drawable/pause_icon"
             android:layout_weight="1"/>
 
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:padding="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="15dp"
+            android:id="@+id/forward10sec"
+            android:background="@drawable/forward_10_sec"
+            android:layout_weight="1"/>
 
 
     </LinearLayout>

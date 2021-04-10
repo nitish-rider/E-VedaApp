@@ -12,7 +12,7 @@ import android.view.WindowManager;
 import pradyumna.simhansapp.R;
 
 public class Splash1 extends AppCompatActivity {
-    private static int SPLASH_TIME_OUT = 3500;
+    private static int SPLASH_TIME_OUT = 3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

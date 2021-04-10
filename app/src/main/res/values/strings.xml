@@ -40,7 +40,7 @@ Most of the verses in Saama Veda are taken from Rig Veda. There are several new 
 </string>
 
 
-    <string name="abt">You will be aware that we are approaching the landmark 1000th year of Ramanuja’s Thirunakshatram in few months. He was the person who spread the Sri Vaishnava Samparadayam and showed the greatness of our Vishishtadvaita philosophy to the world. On this occassion to celebrate our “torch bearer” of Vishishtadvaita, A mobile application is conceptualised and released by Shri U. Ve,. Varada Simhan from Mysore. This is an unique application with amazing contents taught in a "Santhai" style.
+<string name="abt">You will be aware that we are approaching the landmark 1000th year of Ramanuja’s Thirunakshatram in few months. He was the person who spread the Sri Vaishnava Samparadayam and showed the greatness of our Vishishtadvaita philosophy to the world. On this occassion to celebrate our “torch bearer” of Vishishtadvaita, A mobile application is conceptualised and released by Shri U. Ve,. Varada Simhan from Mysore. This is an unique application with amazing contents taught in a "Santhai" style.
 \n\n
 Looking at the digitial world today where everyone is well versed with gadgets starting from early age, this application will act as a great learning and teaching platform to all the youngsters who are aspiring to start "Veda Adhyayanam". This master piece consists of the following.
 \n
@@ -48,7 +48,7 @@ Looking at the digitial world today where everyone is well versed with gadgets s
 \n
 2. Prabandham
 \n\n
-This application is also intended for every Hindu Brahmin family to kindle interests in their future generation  and to give them the glorious path of "Life". This media can be useful for many generations to come. Shri U Ve. Varada Simhnan has spent enormous amount of hours to create this application. This can be accessed across all over the world. For all parents who have an aspiration to make their next generation follow the legacy and to keep the thread of our Sampradayam, this application is a fantastic launching pad to fulfill their duties.
+This application is also intended for every Hindu Brahmin family to kindle interests in their future generation  and to give them the glorious path of "Life". This media can be useful for many generations to come. Shri U Ve. Varada Simhan has spent enormous amount of hours to create this application. This can be accessed across all over the world. For all parents who have an aspiration to make their next generation follow the legacy and to keep the thread of our Sampradayam, this application is a fantastic launching pad to fulfill their duties.
 \n\n
 SRIMATHE RAMANUJAYE NAMAHA
 PRANAMANGAL</string>
@@ -73,8 +73,8 @@ PRANAMANGAL</string>
     <string name="title_activity_about">About</string>
     <string name="title_activity_sthothram">Sthothram</string>
     <string name="title_activity_prateekas">Prateekas</string>
-    <string name="dev_pradyumna_details">Simhan\'s E-VedaShree has been developed by InnInc studios, an app development group led by PRADYUMNA.Y, who is a disciple of Vid. R Varada Simhan.</string>
-    <string name="DEV_2">Simhan\'s E-VedaShree has been Revamped by Ashish Kumar Mishra and Nitish Kumar Sonthalia with Innic Studios.</string>
+    <string name="dev_pradyumna_details">Simhan\'s E-VedaShree has been developed by InnInc studios, an app development group led by PRADYUMNA.Y, who is a disciple of Vid. R Varada Simhan.The app has been Revamped by Ashish Kumar Mishra and Nitish Kumar Sonthalia.</string>
+    <string name="DEV_2">Simhan\'s E-VedaShree  with Innic Studios.</string>
     <string name="dev_3">For further feedback and queries on the App functionalities, please contact the developer. Email: yogan.pradyumna@gmail.com Phone: +91-9066643299</string>
     <string name="feedback_page_1">Any queries ? Please feel free to write to us. We would also love to receive your valuable feedback!</string>
     <string name="Instruction_1">1. All the lessons are in such a way that Guru teaches the corresponding mantra/shloka and the student repeats it for two times.\n You are advised to listen to the Guru carefully and chant simultaneously along with the student for two times.</string>
@@ -83,4 +83,5 @@ PRANAMANGAL</string>
     <string name="inst4">4. In case of 2 steps, follow each step for 6 days each.</string>
     <string name="inst5">5. After you are confident of fluency, you can go to tiruve which shall be done in the following manner. \nIn case of vedas, count 10 sentences and chant the same for 5 times continuously before going to the next 10 sentences. Repeat the same for minimum of 3 days for effective learning. \nIn case of Divya Prabhanda, each paashuram has to be repeated for 5 times continuously before going to the next paashuram. Repeat this exercise of 3 days for effective learning. So, in 15 days, the learning exercise for that particular portion will be completed.</string>
     <string name="inst6">6. There are six auxiliary disciplines of Vedas known as Vedaangas developed in ancient times, and are essential in the study and practice of The Vedas. \nThese are: Shiksha, Chandas, Vyakarana, Niruktha, Kalpa and Jyothisha. We expand the importance of only Shiksha here \n\n Shiksha (śikṣā): phonetics, phonology, pronunciation.This focusses on the letters of the Sanskrit alphabet, accent, quantity, stress, melody and rules of euphonic combination of words during a Vedic recitation. Hence, the pronunciation in a standard and well accepted format is one of the hallmarks of veda recitation. It also renders group recitation very effective and appealing \n\n Dress code: There are accepted dress codes like kachchapancha and uttariya for married men and Datti panche and uttariya for brahmacharis. We also have to apply lanchana on the forehead according to our tradition. . This is to be followed strictly to respect and preserve our ancient tradition.</string>
+    <string name="prateekas_top">In Vedas, there are 2 parts, Mantra and Braamhana. In mantra, certain texts have been given in short forms. We need to expand by inserting relevant portions of mantras which are found else where in the Vedas. Such short forms are called prateekas. They need to be elaborated for learning purpose.</string>
 </resources>
