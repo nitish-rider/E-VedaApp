@@ -4,7 +4,6 @@ import android.app.ProgressDialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.media.MediaPlayer
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -191,44 +190,44 @@ class Veda_Player : AppCompatActivity(),RvClickHandler {
 
         })
 
-        mediaPlayer.setOnCompletionListener(object : MediaPlayer.OnCompletionListener {
-            override fun onCompletion(p0: MediaPlayer?) {
-                play_button.visibility = View.VISIBLE
-                pauseBtn.visibility = View.GONE
-                mediaPlayer.seekTo(0)
-            }
-
-        })
+        mediaPlayer.setOnCompletionListener {
+            play_button.visibility = View.VISIBLE
+            pauseBtn.visibility = View.GONE
+            mediaPlayer.seekTo(0)
+        }
 
     }
 
     override fun onItemClick(position: Int) {
-       if(mediaPlayer.isPlaying){
-           mediaPlayer.stop()
-       }
-//        val loading = LoadingDialog(this)
-//        loading.startLoading()
-//        val handler = Handler()
-//        handler.postDelayed(object :Runnable{
-//            override fun run() {
-//                loading.isDismiss()
-//            }
-//
-//        },5000)
+        if (mediaPlayer.isPlaying) {
+            mediaPlayer.stop()
+            mediaPlayer.reset()
+            mediaPlayer.reset()
+        }
+        val loading = LoadingDialog(this)
+        loading.startLoading()
+        val handler = Handler()
+        handler.postDelayed(object : Runnable {
+            override fun run() {
+                loading.isDismiss()
+            }
 
-
+        }, 3000)
         Log.d("Song Data", "URL: " + items[items.keys.elementAt(position)].toString())
-        val url=items[items.keys.elementAt(position)].toString()
-        mediaPlayer=MediaPlayer.create(this, Uri.parse(url))
-        player_file_name.text = items.keys.elementAt(position)
-        mediaPlayer.start()
-        pauseBtn.visibility = View.VISIBLE
-        play_Btn.visibility = View.GONE
-        player_time_start.text = milliSecondToTimer(0)
-        val finalTime=mediaPlayer.duration;
-        player_time_end.text= String.format("%02d : %02d", TimeUnit.MILLISECONDS.toMinutes(finalTime.toLong()), TimeUnit.MILLISECONDS.toSeconds(finalTime.toLong()) - TimeUnit.MILLISECONDS.toMinutes(finalTime.toLong()) * 60)
-        seekBar.max = finalTime.toInt()
-        updateSeekBar()
+        val url = items[items.keys.elementAt(position)].toString()
+        mediaPlayer.setDataSource(url)
+        mediaPlayer.prepareAsync()
+        mediaPlayer.setOnPreparedListener() {
+            mediaPlayer.start()
+            player_file_name.text = items.keys.elementAt(position)
+            pauseBtn.visibility = View.VISIBLE
+            play_Btn.visibility = View.GONE
+            val finalTime = mediaPlayer.duration;
+            player_time_start.text = milliSecondToTimer(0)
+            player_time_end.text = String.format("%02d : %02d", TimeUnit.MILLISECONDS.toMinutes(finalTime.toLong()), TimeUnit.MILLISECONDS.toSeconds(finalTime.toLong()) - TimeUnit.MILLISECONDS.toMinutes(finalTime.toLong()) * 60)
+            seekBar.max = finalTime.toInt()
+            updateSeekBar()
+        }
     }
 
 
@@ -244,11 +243,11 @@ class Veda_Player : AppCompatActivity(),RvClickHandler {
     private fun updateSeekBar() {
         if (mediaPlayer.isPlaying) {
             seekBar.progress = (mediaPlayer.currentPosition.toInt())
-            handler.postDelayed(updater, 1000)
+            handler.postDelayed(updater, 100)
         }
     }
 
     private fun milliSecondToTimer(duration: Long): String? {
-        return String.format("%02d:%02d", TimeUnit.MILLISECONDS.toMinutes(duration.toLong()), TimeUnit.MILLISECONDS.toSeconds(duration.toLong()) - TimeUnit.MILLISECONDS.toMinutes(duration.toLong()) * 60)
+        return String.format("%02d:%02d", TimeUnit.MILLISECONDS.toMinutes(duration.toLong()), TimeUnit.MILLISECONDS.toSeconds(duration.toLong()) - TimeUnit.MILLISECONDS.toMinutes(duration) * 60)
     }
 }

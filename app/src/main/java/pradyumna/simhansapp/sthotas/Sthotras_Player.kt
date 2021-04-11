@@ -22,6 +22,7 @@ import kotlinx.android.synthetic.main.activity_veda__player.*
 import pradyumna.simhansapp.R
 import pradyumna.simhansapp.adapterFiles.PRvAdapter
 import pradyumna.simhansapp.adaptersFolders.RvClickHandler
+import pradyumna.simhansapp.utils.LoadingDialog
 import pradyumna.simhansapp.viewModel.SthotasDataViewModel
 import java.util.concurrent.TimeUnit
 
@@ -200,20 +201,32 @@ class Sthotras_Player : AppCompatActivity(),RvClickHandler {
     override fun onItemClick(position: Int) {
         if (mediaPlayer.isPlaying) {
             mediaPlayer.stop()
+            mediaPlayer.reset()
         }
-        mediaPlayer = MediaPlayer()
+        val loading = LoadingDialog(this)
+        loading.startLoading()
+        val handler = Handler()
+        handler.postDelayed(object : Runnable {
+            override fun run() {
+                loading.isDismiss()
+            }
+
+        }, 3000)
         Log.d("Song Data", "URL: " + items[items.keys.elementAt(position)].toString())
         val url = items[items.keys.elementAt(position)].toString()
-        mediaPlayer = MediaPlayer.create(this, Uri.parse(url))
-        player_file_name.text = items.keys.elementAt(position)
-        mediaPlayer.start()
-        pauseBtn.visibility = View.VISIBLE
-        play_Btn.visibility = View.GONE
-        player_time_start.text = milliSecondToTimer(0)
-        val finalTime = mediaPlayer.duration;
-        player_time_end.text = String.format("%02d : %02d", TimeUnit.MILLISECONDS.toMinutes(finalTime.toLong()), TimeUnit.MILLISECONDS.toSeconds(finalTime.toLong()) - TimeUnit.MILLISECONDS.toMinutes(finalTime.toLong()) * 60)
-        seekBar.max = finalTime.toInt()
-        updateSeekBar()
+        mediaPlayer.setDataSource(url)
+        mediaPlayer.prepareAsync()
+        mediaPlayer.setOnPreparedListener() {
+            mediaPlayer.start()
+            player_file_name.text = items.keys.elementAt(position)
+            pauseBtn.visibility = View.VISIBLE
+            play_Btn.visibility = View.GONE
+            val finalTime = mediaPlayer.duration;
+            player_time_start.text = milliSecondToTimer(0)
+            player_time_end.text = String.format("%02d : %02d", TimeUnit.MILLISECONDS.toMinutes(finalTime.toLong()), TimeUnit.MILLISECONDS.toSeconds(finalTime.toLong()) - TimeUnit.MILLISECONDS.toMinutes(finalTime.toLong()) * 60)
+            seekBar.max = finalTime.toInt()
+            updateSeekBar()
+        }
     }
 
 
