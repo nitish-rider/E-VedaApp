@@ -15,6 +15,7 @@ class LoadingDialog(val mActivity: Activity) {
         bulider.setView(dialogView)
         bulider.setCancelable(false)
         isdialog = bulider.create()
+        isdialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
         isdialog.show()
     }
     fun isDismiss(){
