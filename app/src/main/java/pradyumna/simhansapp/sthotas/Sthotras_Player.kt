@@ -111,7 +111,7 @@ class Sthotras_Player : AppCompatActivity(),RvClickHandler {
         mSthotasDataViewModel = ViewModelProvider(this).get(SthotasDataViewModel::class.java)
 
         //Set adapter
-        val adapter = PRvAdapter(this)
+        val adapter = PRvAdapter(this,this)
         mRecyclerView.adapter = adapter
         mRecyclerView.layoutManager = LinearLayoutManager(applicationContext)
 

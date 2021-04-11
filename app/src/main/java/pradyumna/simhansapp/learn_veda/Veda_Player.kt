@@ -1,5 +1,6 @@
 package pradyumna.simhansapp.learn_veda
 
+import android.app.ProgressDialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.media.MediaPlayer
@@ -22,6 +23,7 @@ import kotlinx.android.synthetic.main.activity_veda__player.*
 import pradyumna.simhansapp.R
 import pradyumna.simhansapp.adapterFiles.PRvAdapter
 import pradyumna.simhansapp.adaptersFolders.RvClickHandler
+import pradyumna.simhansapp.utils.LoadingDialog
 import pradyumna.simhansapp.viewModel.VedaDataViewModel
 import java.util.concurrent.TimeUnit
 
@@ -57,6 +59,7 @@ class Veda_Player : AppCompatActivity(),RvClickHandler {
     lateinit var back_10_sec:Button
     lateinit var forward_10_sec:Button
     lateinit var player_file_name: TextView
+    lateinit var progressDialog:ProgressDialog
     var handler = Handler()
     private lateinit var pauseBtn: Button
     var runnable: Runnable? = null
@@ -109,7 +112,7 @@ class Veda_Player : AppCompatActivity(),RvClickHandler {
         mVedaDataViewModel = ViewModelProvider(this).get(VedaDataViewModel::class.java)
 
         //Set adapter
-        val adapter = PRvAdapter(this)
+        val adapter = PRvAdapter(this,this@Veda_Player)
         mRecyclerView.adapter = adapter
         mRecyclerView.layoutManager = LinearLayoutManager(applicationContext)
 
@@ -203,6 +206,17 @@ class Veda_Player : AppCompatActivity(),RvClickHandler {
        if(mediaPlayer.isPlaying){
            mediaPlayer.stop()
        }
+//        val loading = LoadingDialog(this)
+//        loading.startLoading()
+//        val handler = Handler()
+//        handler.postDelayed(object :Runnable{
+//            override fun run() {
+//                loading.isDismiss()
+//            }
+//
+//        },5000)
+
+
         Log.d("Song Data", "URL: " + items[items.keys.elementAt(position)].toString())
         val url=items[items.keys.elementAt(position)].toString()
         mediaPlayer=MediaPlayer.create(this, Uri.parse(url))

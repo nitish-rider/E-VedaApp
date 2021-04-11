@@ -111,7 +111,7 @@ class Prabandham_Player : AppCompatActivity(),RvClickHandler {
         mPrabandhamDataViewModel = ViewModelProvider(this).get(PrabandhamDataViewModel::class.java)
 
         //Set adapter
-        val adapter = PRvAdapter(this)
+        val adapter = PRvAdapter(this,this)
         mRecyclerView.adapter = adapter
         mRecyclerView.layoutManager = LinearLayoutManager(applicationContext)
 
