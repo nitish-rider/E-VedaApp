@@ -202,6 +202,7 @@ class Prabandham_Player : AppCompatActivity(),RvClickHandler {
     override fun onItemClick(position: Int) {
         if (mediaPlayer.isPlaying) {
             mediaPlayer.stop()
+            mediaPlayer.release()
             mediaPlayer.reset()
         }
         val loading = LoadingDialog(this)
