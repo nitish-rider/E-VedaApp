@@ -70,4 +70,14 @@
         android:background="@drawable/gradient"
         android:layout_marginBottom="51dp" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thanks for the Feedback"
+        android:textSize="20sp"
+        android:id="@+id/thanksText"
+        android:textColor="@color/Text_Main"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone"/>
+
 </LinearLayout>
