@@ -60,6 +60,7 @@ class Sthotras : AppCompatActivity(), RvClickHandler {
         if (mSthotasFolderViewModel!!.allFolderName != null) {
             mSthotasFolderViewModel!!.allFolderName.observe(this, { strings ->
                 if (!strings.isEmpty()) {
+                    strings.sort()
                     items = strings
                     adapter.submitList(strings)
                 } else {

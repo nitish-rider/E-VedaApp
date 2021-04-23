@@ -72,6 +72,7 @@ class Learn_Veda : AppCompatActivity(), RvClickHandler {
         if (mVedasFolderViewModel.allFolderName != null) {
             mVedasFolderViewModel.allFolderName.observe(this, { strings ->
                 if (strings.isNotEmpty()) {
+                    strings.sort()
                     items = strings
                     adapter.submitList(strings)
                 } else {

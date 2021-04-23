@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_weight="1"
-        android:background="@drawable/gradient">
+        android:background="@color/orangeMain">
 
         <TextView
             android:layout_width="match_parent"

@@ -61,6 +61,7 @@ class Prabandham : AppCompatActivity(), RvClickHandler {
         if (mPrabandhamDataViewModel!!.allFolderName != null) {
             mPrabandhamDataViewModel!!.allFolderName.observe(this, { strings ->
                 if (!strings.isEmpty()) {
+                    strings.sort()
                     items = strings
                     adapter.submitList(strings)
                 } else {

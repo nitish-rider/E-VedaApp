@@ -122,8 +122,9 @@ class Prabandham_Player : AppCompatActivity(),RvClickHandler {
 
         mPrabandhamDataViewModel!!.getAllFileName(name).observe(this,{ stringObjectMap ->
             if (stringObjectMap != null) {
-                items = stringObjectMap.toMap()
-                adapter.submitList(stringObjectMap.keys.toList())
+                val sortedMap=stringObjectMap.toSortedMap(compareBy<String> { it.length }.thenBy { it })
+                items = sortedMap.toMap()
+                adapter.submitList(sortedMap.keys.toList())
             } else {
                 Log.d("Set Send", "DATA NOT SEND TO ADAPTER")
             }
