@@ -23,7 +23,7 @@ public class SthotasDataViewModel extends AndroidViewModel {
 
     public SthotasDataViewModel(@NonNull Application application) {
         super(application);
-        FileData=new MutableLiveData<>();
+        FileData = new MutableLiveData<>();
     }
 
     public MutableLiveData<Map<String, Object>> getAllFileName(String Doc) {

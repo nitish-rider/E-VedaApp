@@ -15,13 +15,13 @@ public class PrabandhamFolderViewModel extends AndroidViewModel {
     //Variables
     FirebaseFolderNames mFirebaseFolderNames;
     LiveData<ArrayList<String>> AllFolderName;
-    private MutableLiveData<String> queryLiveData;
+    private final MutableLiveData<String> queryLiveData;
 
     public PrabandhamFolderViewModel(@NonNull Application application) {
         super(application);
-        mFirebaseFolderNames=new FirebaseFolderNames();
-        AllFolderName=mFirebaseFolderNames. getFolderName("Learn Prabandham");
-        queryLiveData=new MutableLiveData<>();
+        mFirebaseFolderNames = new FirebaseFolderNames();
+        AllFolderName = mFirebaseFolderNames.getFolderName("Learn Prabandham");
+        queryLiveData = new MutableLiveData<>();
     }
 
     public MutableLiveData<String> getQueryLiveData() {

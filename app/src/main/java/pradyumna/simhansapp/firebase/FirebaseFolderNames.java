@@ -22,27 +22,19 @@ public class FirebaseFolderNames {
     public MutableLiveData<ArrayList<String>> getFolderName(String type) {
         db.collection(type)
                 .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                if (document.getId() != null) {
-                                    Log.d("TAG", "OnSuccess" + document.getId());
-                                    folderName.add(document.getId());
-                                }
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            if (document.getId() != null) {
+                                Log.d("TAG", "OnSuccess" + document.getId());
+                                folderName.add(document.getId());
                             }
-                            FolderName.postValue(folderName);
-                        } else {
-                            Log.d("TAG", "OnNoData");
                         }
+                        FolderName.postValue(folderName);
+                    } else {
+                        Log.d("TAG", "OnNoData");
                     }
-                }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.d("TAG", "OnFaliure");
-            }
-        });
+                }).addOnFailureListener(e -> Log.d("TAG", "OnFaliure"));
         return FolderName;
     }
 }

@@ -26,9 +26,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 import pradyumna.simhansapp.R;
 import pradyumna.simhansapp.adapterPdf.PrvAdapter;
@@ -98,7 +96,6 @@ public class Prateekas extends AppCompatActivity implements RvClickHandler {
 
     @Override
     public void onItemClick(int position) {
-//        getUrl(fileName.get(position));
         DocumentReference docRef = db.collection("Pratheekas").document(fileName.get(position));
         docRef.get()
                 .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -108,7 +105,7 @@ public class Prateekas extends AppCompatActivity implements RvClickHandler {
                             DocumentSnapshot documentSnapshot = task.getResult();
                             if (documentSnapshot.exists()) {
                                 DocData = documentSnapshot.getData();
-                                Log.d("URLDATA",DocData.get(DocData.keySet().toArray()[0]).toString());
+                                Log.d("URLDATA", DocData.get(DocData.keySet().toArray()[0]).toString());
                                 String googleDocsUrl = DocData.get(DocData.keySet().toArray()[0]).toString();
                                 Intent intent = new Intent(Intent.ACTION_VIEW);
                                 intent.setDataAndType(Uri.parse(googleDocsUrl), "text/html");
@@ -125,23 +122,5 @@ public class Prateekas extends AppCompatActivity implements RvClickHandler {
 
     }
 
-    public void getUrl(String doc) {
-        DocumentReference docRef = db.collection("Pratheekas").document(doc);
-        docRef.get()
-                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                        if (task.isSuccessful()) {
-                            DocumentSnapshot documentSnapshot = task.getResult();
-                            if (documentSnapshot.exists()) {
-                                DocData = documentSnapshot.getData();
-                            } else {
-                                Log.d("TAG", "No such document");
-                            }
-                        } else {
-                            Log.d("TAG", "get failed with ", task.getException());
-                        }
-                    }
-                });
-    }
+
 }

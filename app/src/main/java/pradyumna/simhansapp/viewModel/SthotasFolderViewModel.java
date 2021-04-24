@@ -13,15 +13,15 @@ import pradyumna.simhansapp.firebase.FirebaseFolderNames;
 
 public class SthotasFolderViewModel extends AndroidViewModel {
     //Variables
-    private FirebaseFolderNames mFirebaseFolderNames;
-    private LiveData<ArrayList<String>> AllFolderName;
-    private MutableLiveData<String> queryLiveData;
+    private final FirebaseFolderNames mFirebaseFolderNames;
+    private final LiveData<ArrayList<String>> AllFolderName;
+    private final MutableLiveData<String> queryLiveData;
 
     public SthotasFolderViewModel(@NonNull Application application) {
         super(application);
-        mFirebaseFolderNames=new FirebaseFolderNames();
-        AllFolderName=mFirebaseFolderNames. getFolderName("Learn Sthotras");
-        queryLiveData=new MutableLiveData<>();
+        mFirebaseFolderNames = new FirebaseFolderNames();
+        AllFolderName = mFirebaseFolderNames.getFolderName("Learn Sthotras");
+        queryLiveData = new MutableLiveData<>();
     }
 
     public MutableLiveData<String> getQueryLiveData() {

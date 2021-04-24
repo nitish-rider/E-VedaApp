@@ -1,30 +1,29 @@
 package pradyumna.simhansapp.prabandham
 
-import androidx.appcompat.app.AppCompatActivity
-import pradyumna.simhansapp.adaptersFolders.RvClickHandler
-import pradyumna.simhansapp.adaptersFolders.RvAdapter
-import androidx.recyclerview.widget.RecyclerView
-import pradyumna.simhansapp.viewModel.PrabandhamFolderViewModel
-import android.os.Bundle
-import android.os.Build
-import android.view.WindowManager
-import pradyumna.simhansapp.R
-import android.graphics.drawable.ColorDrawable
-import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
 import android.content.Intent
 import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import android.os.Build
+import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
-import pradyumna.simhansapp.prabandham.Prabandham_Player
+import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import pradyumna.simhansapp.R
+import pradyumna.simhansapp.adaptersFolders.RvAdapter
+import pradyumna.simhansapp.adaptersFolders.RvClickHandler
+import pradyumna.simhansapp.viewModel.PrabandhamFolderViewModel
 import java.util.*
 
 class Prabandham : AppCompatActivity(), RvClickHandler {
     //Variables
-    var adapter = RvAdapter(this)
-    lateinit var recyclerView: RecyclerView
+    private var adapter = RvAdapter(this)
+    private lateinit var recyclerView: RecyclerView
     lateinit var items: ArrayList<String?>
     lateinit var mPrabandhamDataViewModel: PrabandhamFolderViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,13 +52,13 @@ class Prabandham : AppCompatActivity(), RvClickHandler {
         //Set adapter
         recyclerView = findViewById(R.id.LprecyclerView)
         mPrabandhamDataViewModel = ViewModelProvider(this).get(PrabandhamFolderViewModel::class.java)
-        recyclerView.setAdapter(adapter)
+        recyclerView.adapter = adapter
         val layoutManager = LinearLayoutManager(this)
-        recyclerView.setLayoutManager(layoutManager)
+        recyclerView.layoutManager = layoutManager
 
         //Observing Live Data and providing to adapter
-        if (mPrabandhamDataViewModel!!.allFolderName != null) {
-            mPrabandhamDataViewModel!!.allFolderName.observe(this, { strings ->
+        if (mPrabandhamDataViewModel.allFolderName != null) {
+            mPrabandhamDataViewModel.allFolderName.observe(this, { strings ->
                 if (!strings.isEmpty()) {
                     strings.sort()
                     items = strings
@@ -70,9 +69,10 @@ class Prabandham : AppCompatActivity(), RvClickHandler {
             })
         }
         //Search option filter data
-        mPrabandhamDataViewModel!!.queryLiveData.observe(this, { s ->
+        mPrabandhamDataViewModel.queryLiveData.observe(this, { s ->
             if (s != null) {
-                val toList: List<String> = mPrabandhamDataViewModel.allFolderName.value?.filter { it.toLowerCase(Locale.ROOT).contains(s.toLowerCase(Locale.ROOT)) }?.toList()?:return@observe
+                val toList: List<String> = mPrabandhamDataViewModel.allFolderName.value?.filter { it.toLowerCase(Locale.ROOT).contains(s.toLowerCase(Locale.ROOT)) }?.toList()
+                        ?: return@observe
                 adapter.submitList(toList)
             }
         })
@@ -80,7 +80,7 @@ class Prabandham : AppCompatActivity(), RvClickHandler {
 
     override fun onItemClick(position: Int) {
         val intent = Intent(this@Prabandham, Prabandham_Player::class.java)
-        intent.putExtra("Name", items!![position])
+        intent.putExtra("Name", items[position])
         startActivity(intent)
     }
 
@@ -94,9 +94,9 @@ class Prabandham : AppCompatActivity(), RvClickHandler {
         val menuItem: MenuItem = menu?.findItem(R.id.search_view)!!
 
         //SearchView Variable
-        val searchView:androidx.appcompat.widget.SearchView = menuItem.actionView as androidx.appcompat.widget.SearchView
+        val searchView: androidx.appcompat.widget.SearchView = menuItem.actionView as androidx.appcompat.widget.SearchView
         //Initialize Search View
-        searchView.setOnQueryTextListener(object: androidx.appcompat.widget.SearchView.OnQueryTextListener {
+        searchView.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
                 mPrabandhamDataViewModel.queryLiveData.postValue(query)
                 return true

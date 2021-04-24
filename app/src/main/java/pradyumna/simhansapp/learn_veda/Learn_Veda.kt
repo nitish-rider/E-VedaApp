@@ -5,18 +5,10 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
 import android.view.*
-import android.widget.Button
-import android.widget.EditText
-import android.widget.SearchView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.MenuItemCompat
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import pradyumna.simhansapp.R
@@ -30,8 +22,8 @@ import java.util.*
 class Learn_Veda : AppCompatActivity(), RvClickHandler {
     //Variables
     private val adapter = RvAdapter(this)
-    lateinit var recyclerView: RecyclerView
-    lateinit var items: ArrayList<String?>
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var items: ArrayList<String?>
     lateinit var mVedasFolderViewModel: VedasFolderViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,7 +57,7 @@ class Learn_Veda : AppCompatActivity(), RvClickHandler {
 
         //Set adapter
         recyclerView.adapter = adapter
-        val layoutManager =LinearLayoutManager(applicationContext)
+        val layoutManager = LinearLayoutManager(applicationContext)
         recyclerView.layoutManager = layoutManager
 
         //Observing Live Data and providing to adapter
@@ -82,9 +74,10 @@ class Learn_Veda : AppCompatActivity(), RvClickHandler {
         }
 
         //Search option filter data
-        mVedasFolderViewModel.queryLiveData.observe(this,){ query: String? ->
-            if(query!=null){
-                val toList = mVedasFolderViewModel.allFolderName.value?.filter { it.toLowerCase(Locale.ROOT).contains(query.toLowerCase(Locale.ROOT)) }?.toList()?:return@observe
+        mVedasFolderViewModel.queryLiveData.observe(this) { query: String? ->
+            if (query != null) {
+                val toList = mVedasFolderViewModel.allFolderName.value?.filter { it.toLowerCase(Locale.ROOT).contains(query.toLowerCase(Locale.ROOT)) }?.toList()
+                        ?: return@observe
                 adapter.submitList(toList)
             }
         }
@@ -99,26 +92,26 @@ class Learn_Veda : AppCompatActivity(), RvClickHandler {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
 
         //Initialize Menu inflater
-        val menuInflater:MenuInflater = menuInflater
+        val menuInflater: MenuInflater = menuInflater
         //Inflate Menu
         menuInflater.inflate(R.menu.menu_search, menu)
         //Initialize Menu Items
-        val menuItem:MenuItem = menu?.findItem(R.id.search_view)!!
+        val menuItem: MenuItem = menu?.findItem(R.id.search_view)!!
 
         //SearchView Variable
-        val searchView:androidx.appcompat.widget.SearchView = menuItem.actionView as androidx.appcompat.widget.SearchView
-            //Initialize Search View
-            searchView.setOnQueryTextListener(object: androidx.appcompat.widget.SearchView.OnQueryTextListener {
-                override fun onQueryTextSubmit(query: String): Boolean {
-                        mVedasFolderViewModel.queryLiveData.postValue(query)
-                    return true
-                }
+        val searchView: androidx.appcompat.widget.SearchView = menuItem.actionView as androidx.appcompat.widget.SearchView
+        //Initialize Search View
+        searchView.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                mVedasFolderViewModel.queryLiveData.postValue(query)
+                return true
+            }
 
-                override fun onQueryTextChange(newText: String): Boolean {
-                    mVedasFolderViewModel.queryLiveData.postValue(newText)
-                    return true
-                }
-            })
+            override fun onQueryTextChange(newText: String): Boolean {
+                mVedasFolderViewModel.queryLiveData.postValue(newText)
+                return true
+            }
+        })
         return super.onCreateOptionsMenu(menu)
     }
 

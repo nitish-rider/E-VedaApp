@@ -1,7 +1,5 @@
 package pradyumna.simhansapp.splash;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -9,11 +7,13 @@ import android.os.Handler;
 import android.view.Window;
 import android.view.WindowManager;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import pradyumna.simhansapp.MainActivity;
 import pradyumna.simhansapp.R;
 
 public class Splash2 extends AppCompatActivity {
-    private static int SPLASH_TIME_OUT = 2000;
+    private static final int SPLASH_TIME_OUT = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

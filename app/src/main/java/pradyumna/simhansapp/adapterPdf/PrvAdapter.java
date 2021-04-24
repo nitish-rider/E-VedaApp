@@ -53,12 +53,7 @@ public class PrvAdapter extends ListAdapter<String, PrvAdapter.PRvViewHolher> {
         public PRvViewHolher(@NonNull View itemView) {
             super(itemView);
             mTextView = itemView.findViewById(R.id.FileNamePRV);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    mRvClickHandler.onItemClick(getAdapterPosition());
-                }
-            });
+            itemView.setOnClickListener(view -> mRvClickHandler.onItemClick(getAdapterPosition()));
         }
     }
 }

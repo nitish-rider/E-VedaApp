@@ -22,8 +22,8 @@ import java.util.*
 
 class Sthotras : AppCompatActivity(), RvClickHandler {
     //Variables
-    lateinit var recyclerView: RecyclerView
-    lateinit var items: ArrayList<String?>
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var items: ArrayList<String?>
     lateinit var mSthotasFolderViewModel: SthotasFolderViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,7 +40,6 @@ class Sthotras : AppCompatActivity(), RvClickHandler {
 
         // Define ColorDrawable object and parse color
         val colorDrawable = ColorDrawable(Color.parseColor("#F1D548"))
-        assert(actionBar != null)
         actionBar!!.setBackgroundDrawable(colorDrawable)
         actionBar.setDisplayHomeAsUpEnabled(true)
         actionBar.setDisplayHomeAsUpEnabled(true)
@@ -52,14 +51,14 @@ class Sthotras : AppCompatActivity(), RvClickHandler {
 
         //Set adapter
         val adapter = RvAdapter(this)
-        recyclerView.setAdapter(adapter)
+        recyclerView.adapter = adapter
         val layoutManager = LinearLayoutManager(this)
-        recyclerView.setLayoutManager(layoutManager)
+        recyclerView.layoutManager = layoutManager
 
         //Observing Live Data and providing to adapter
-        if (mSthotasFolderViewModel!!.allFolderName != null) {
-            mSthotasFolderViewModel!!.allFolderName.observe(this, { strings ->
-                if (!strings.isEmpty()) {
+        if (mSthotasFolderViewModel.allFolderName != null) {
+            mSthotasFolderViewModel.allFolderName.observe(this, { strings ->
+                if (strings.isNotEmpty()) {
                     strings.sort()
                     items = strings
                     adapter.submitList(strings)
@@ -69,9 +68,10 @@ class Sthotras : AppCompatActivity(), RvClickHandler {
             })
         }
         //Search option filter data
-        mSthotasFolderViewModel.queryLiveData.observe(this,){query: String? ->
-            if(query!=null){
-                val toList = mSthotasFolderViewModel.allFolderName.value?.filter { it.toLowerCase(Locale.ROOT).contains(query.toLowerCase(Locale.ROOT)) }?.toList()?:return@observe
+        mSthotasFolderViewModel.queryLiveData.observe(this) { query: String? ->
+            if (query != null) {
+                val toList = mSthotasFolderViewModel.allFolderName.value?.filter { it.toLowerCase(Locale.ROOT).contains(query.toLowerCase(Locale.ROOT)) }?.toList()
+                        ?: return@observe
                 adapter.submitList(toList)
             }
 
@@ -80,7 +80,7 @@ class Sthotras : AppCompatActivity(), RvClickHandler {
 
     override fun onItemClick(position: Int) {
         val intent = Intent(this@Sthotras, Sthotras_Player::class.java)
-        intent.putExtra("Name", items!![position])
+        intent.putExtra("Name", items[position])
         startActivity(intent)
     }
 
@@ -94,9 +94,9 @@ class Sthotras : AppCompatActivity(), RvClickHandler {
         val menuItem: MenuItem = menu?.findItem(R.id.search_view)!!
 
         //SearchView Variable
-        val searchView:androidx.appcompat.widget.SearchView = menuItem.actionView as androidx.appcompat.widget.SearchView
+        val searchView: androidx.appcompat.widget.SearchView = menuItem.actionView as androidx.appcompat.widget.SearchView
         //Initialize Search View
-        searchView.setOnQueryTextListener(object: androidx.appcompat.widget.SearchView.OnQueryTextListener {
+        searchView.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
                 mSthotasFolderViewModel.queryLiveData.postValue(query)
                 return true

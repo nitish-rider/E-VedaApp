@@ -1,10 +1,6 @@
 package pradyumna.simhansapp.feedback;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
@@ -17,10 +13,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.UUID;
 
 import pradyumna.simhansapp.R;
 
@@ -30,11 +27,8 @@ public class Feedback extends AppCompatActivity {
     EditText nameT, emailT, phT, msgT;
     Button snd;
     TextView thnxText;
-//    Person obj=new Person();
 
     //Database Linker
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("Feedback");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,59 +62,55 @@ public class Feedback extends AppCompatActivity {
         snd = (Button) findViewById(R.id.button5);
         thnxText = (TextView) findViewById(R.id.thanksText);
 
-        snd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                putInDataBase();
-                String tst = msgT.getText().toString();
-                if (tst == "" || tst.equals("")) {
+        snd.setOnClickListener(v -> {
+            String tst = msgT.getText().toString();
+            if (tst == "" || tst.equals("")) {
 
-                    Context context = getBaseContext();
-                    CharSequence text = "Please Enter a Message";
-                    int duration = Toast.LENGTH_LONG;
+                Context context = getBaseContext();
+                CharSequence text = "Please Enter a Message";
+                int duration = Toast.LENGTH_LONG;
 
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
-                } else {
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
+            } else {
 
-                    DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("feedback");
+                DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("feedback");
 
-                    Person person = new Person();
-                    person.setName(nameT.getText().toString());
-                    person.setEmail(emailT.getText().toString());
-                    person.setPh(phT.getText().toString());
-                    person.setMsg(msgT.getText().toString());
+                Person person = new Person();
+                person.setName(nameT.getText().toString());
+                person.setEmail(emailT.getText().toString());
+                person.setPh(phT.getText().toString());
+                person.setMsg(msgT.getText().toString());
 
-                    // Creating new user node, which returns the unique key value
-                    String id = mDatabase.push().getKey();
-                    // new user node would be /users/$userid/
+                // Creating new user node, which returns the unique key value
+                String id = mDatabase.push().getKey();
+                // new user node would be /users/$userid/
 
-                    // pushing user to 'users' node using the userId
-                    mDatabase.child(id).setValue(person);
+                // pushing user to 'users' node using the userId
+                mDatabase.child(id).setValue(person);
 
-                    Context context = getApplicationContext();
-                    CharSequence text = "Thanks for your Feedback!";
-                    int duration = Toast.LENGTH_LONG;
+                Context context = getApplicationContext();
+                CharSequence text = "Thanks for your Feedback!";
+                int duration = Toast.LENGTH_LONG;
 
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
 
 
-                    thnxText.setVisibility(View.VISIBLE);
-                    nameT.setText(" ");
-                    emailT.setText(" ");
-                    phT.setText(" ");
-                    msgT.setText(" ");
+                thnxText.setVisibility(View.VISIBLE);
+                nameT.setText(" ");
+                emailT.setText(" ");
+                phT.setText(" ");
+                msgT.setText(" ");
 
 
-                }
             }
         });
 
     }
 
 
-    public class Person {
+    public static class Person {
         //name and address string
         private String name;
         private String email;

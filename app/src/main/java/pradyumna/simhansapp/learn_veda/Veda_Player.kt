@@ -27,42 +27,42 @@ import pradyumna.simhansapp.utils.LoadingDialog
 import pradyumna.simhansapp.viewModel.VedaDataViewModel
 import java.util.concurrent.TimeUnit
 
-class Veda_Player : AppCompatActivity(),RvClickHandler {
+class Veda_Player : AppCompatActivity(), RvClickHandler {
     override fun onRestart() {
         super.onRestart()
-        if(mediaPlayer.isPlaying){
+        if (mediaPlayer.isPlaying) {
             mediaPlayer.stop()
         }
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        if(mediaPlayer.isPlaying){
+        if (mediaPlayer.isPlaying) {
             mediaPlayer.stop()
         }
     }
 
-    override fun onBackPressed(){
+    override fun onBackPressed() {
         super.onBackPressed()
-        if(mediaPlayer.isPlaying){
+        if (mediaPlayer.isPlaying) {
             mediaPlayer.stop()
         }
 
     }
 
     //Variables
-    lateinit var seekBar: SeekBar
+    private lateinit var seekBar: SeekBar
     private lateinit var play_Btn: Button
-    var mediaPlayer: MediaPlayer=MediaPlayer()
-    lateinit var player_time_start: TextView
-    lateinit var player_time_end: TextView
-    lateinit var back_10_sec:Button
-    lateinit var forward_10_sec:Button
-    lateinit var player_file_name: TextView
-    lateinit var progressDialog:ProgressDialog
-    var handler = Handler()
+    private var mediaPlayer: MediaPlayer = MediaPlayer()
+    private lateinit var player_time_start: TextView
+    private lateinit var player_time_end: TextView
+    private lateinit var back_10_sec: Button
+    private lateinit var forward_10_sec: Button
+    private lateinit var player_file_name: TextView
+    private lateinit var progressDialog: ProgressDialog
+    private var handler = Handler()
     private lateinit var pauseBtn: Button
-    var runnable: Runnable? = null
+    private var runnable: Runnable? = null
 
     private lateinit var mRecyclerView: RecyclerView
     lateinit var mVedaDataViewModel: VedaDataViewModel
@@ -99,20 +99,20 @@ class Veda_Player : AppCompatActivity(),RvClickHandler {
 
         //Initializing values
         mRecyclerView = findViewById(R.id.PlayerRv)
-        player_file_name=findViewById(R.id.player_file_name)
+        player_file_name = findViewById(R.id.player_file_name)
         seekBar = findViewById(R.id.seekBar)
         play_Btn = findViewById(R.id.play_button)
         pauseBtn = findViewById(R.id.pause_button)
-        back_10_sec=findViewById(R.id.back10sec)
-        forward_10_sec=findViewById(R.id.forward10sec)
-        player_time_start=findViewById(R.id.player_time_start)
-        player_time_end=findViewById(R.id.player_time_end)
+        back_10_sec = findViewById(R.id.back10sec)
+        forward_10_sec = findViewById(R.id.forward10sec)
+        player_time_start = findViewById(R.id.player_time_start)
+        player_time_end = findViewById(R.id.player_time_end)
 
         //View Model Initialize
         mVedaDataViewModel = ViewModelProvider(this).get(VedaDataViewModel::class.java)
 
         //Set adapter
-        val adapter = PRvAdapter(this,this@Veda_Player)
+        val adapter = PRvAdapter(this, this@Veda_Player)
         mRecyclerView.adapter = adapter
         mRecyclerView.layoutManager = LinearLayoutManager(applicationContext)
 
@@ -123,7 +123,7 @@ class Veda_Player : AppCompatActivity(),RvClickHandler {
 
         mVedaDataViewModel.getAllFileName(name).observe(this, { stringObjectMap ->
             if (stringObjectMap != null) {
-                val sortedMap=stringObjectMap.toSortedMap(compareBy<String> { it.length }.thenBy { it })
+                val sortedMap = stringObjectMap.toSortedMap(compareBy<String> { it.length }.thenBy { it })
                 items = sortedMap.toMap()
                 adapter.submitList(sortedMap.keys.toList())
             } else {
@@ -143,7 +143,7 @@ class Veda_Player : AppCompatActivity(),RvClickHandler {
 
         back_10_sec.setOnClickListener(View.OnClickListener {
             if (mediaPlayer.isPlaying) {
-                var currrPosition = mediaPlayer.currentPosition
+                val currrPosition = mediaPlayer.currentPosition
                 if (currrPosition - 10000 > 0) {
                     mediaPlayer.seekTo(currrPosition - 10000)
                     player_time_start.text = milliSecondToTimer(mediaPlayer.currentPosition.toLong())
@@ -153,9 +153,9 @@ class Veda_Player : AppCompatActivity(),RvClickHandler {
             }
         })
 
-        forward_10_sec.setOnClickListener(View.OnClickListener {
+        forward_10_sec.setOnClickListener {
             if (mediaPlayer.isPlaying) {
-                var currrPosition = mediaPlayer.currentPosition
+                val currrPosition = mediaPlayer.currentPosition
                 if (currrPosition + 10000 < mediaPlayer.duration) {
                     mediaPlayer.seekTo(currrPosition + 10000)
                     player_time_start.text = milliSecondToTimer(mediaPlayer.currentPosition.toLong())
@@ -164,16 +164,16 @@ class Veda_Player : AppCompatActivity(),RvClickHandler {
                     mediaPlayer.stop()
                 }
             }
-        })
+        }
 
-        pauseBtn.setOnClickListener(View.OnClickListener {
+        pauseBtn.setOnClickListener {
             if (mediaPlayer.isPlaying) {
                 handler.removeCallbacks(updater)
                 mediaPlayer.pause()
                 pauseBtn.visibility = View.GONE
                 play_Btn.visibility = View.VISIBLE
             }
-        })
+        }
 
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
@@ -181,7 +181,7 @@ class Veda_Player : AppCompatActivity(),RvClickHandler {
 
                     mediaPlayer.seekTo(p1)
                 }
-                player_time_start.text = milliSecondToTimer(mediaPlayer.currentPosition.toLong());
+                player_time_start.text = milliSecondToTimer(mediaPlayer.currentPosition.toLong())
             }
 
             override fun onStartTrackingTouch(p0: SeekBar?) {
@@ -209,25 +209,20 @@ class Veda_Player : AppCompatActivity(),RvClickHandler {
         val loading = LoadingDialog(this)
         loading.startLoading()
         val handler = Handler()
-        handler.postDelayed(object : Runnable {
-            override fun run() {
-                loading.isDismiss()
-            }
-
-        }, 3000)
+        handler.postDelayed({ loading.isDismiss() }, 3000)
         Log.d("Song Data", "URL: " + items[items.keys.elementAt(position)].toString())
         val url = items[items.keys.elementAt(position)].toString()
         mediaPlayer.setDataSource(url)
         mediaPlayer.prepareAsync()
-        mediaPlayer.setOnPreparedListener() {
+        mediaPlayer.setOnPreparedListener {
             mediaPlayer.start()
             player_file_name.text = items.keys.elementAt(position)
             pauseBtn.visibility = View.VISIBLE
             play_Btn.visibility = View.GONE
-            val finalTime = mediaPlayer.duration;
+            val finalTime = mediaPlayer.duration
             player_time_start.text = milliSecondToTimer(0)
             player_time_end.text = String.format("%02d : %02d", TimeUnit.MILLISECONDS.toMinutes(finalTime.toLong()), TimeUnit.MILLISECONDS.toSeconds(finalTime.toLong()) - TimeUnit.MILLISECONDS.toMinutes(finalTime.toLong()) * 60)
-            seekBar.max = finalTime.toInt()
+            seekBar.max = finalTime
             updateSeekBar()
         }
     }
@@ -236,20 +231,19 @@ class Veda_Player : AppCompatActivity(),RvClickHandler {
     private val updater = Runnable {
         updateSeekBar()
         val timeElapsed = mediaPlayer.currentPosition
-        player_time_start.text= String.format("%02d:%02d", TimeUnit.MILLISECONDS.toMinutes(timeElapsed.toLong()), TimeUnit.MILLISECONDS.toSeconds(timeElapsed.toLong()) - TimeUnit.MILLISECONDS.toMinutes(timeElapsed.toLong()) * 60)
+        player_time_start.text = String.format("%02d:%02d", TimeUnit.MILLISECONDS.toMinutes(timeElapsed.toLong()), TimeUnit.MILLISECONDS.toSeconds(timeElapsed.toLong()) - TimeUnit.MILLISECONDS.toMinutes(timeElapsed.toLong()) * 60)
 
     }
-
 
 
     private fun updateSeekBar() {
         if (mediaPlayer.isPlaying) {
-            seekBar.progress = (mediaPlayer.currentPosition.toInt())
+            seekBar.progress = (mediaPlayer.currentPosition)
             handler.postDelayed(updater, 100)
         }
     }
 
-    private fun milliSecondToTimer(duration: Long): String? {
-        return String.format("%02d:%02d", TimeUnit.MILLISECONDS.toMinutes(duration.toLong()), TimeUnit.MILLISECONDS.toSeconds(duration.toLong()) - TimeUnit.MILLISECONDS.toMinutes(duration) * 60)
+    private fun milliSecondToTimer(duration: Long): String {
+        return String.format("%02d:%02d", TimeUnit.MILLISECONDS.toMinutes(duration), TimeUnit.MILLISECONDS.toSeconds(duration) - TimeUnit.MILLISECONDS.toMinutes(duration) * 60)
     }
 }

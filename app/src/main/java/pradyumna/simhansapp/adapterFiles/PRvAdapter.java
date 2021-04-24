@@ -1,7 +1,6 @@
 package pradyumna.simhansapp.adapterFiles;
 
 import android.app.Activity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,14 +11,8 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
-import java.util.Set;
-import java.util.logging.Handler;
-import java.util.logging.LogRecord;
-
 import pradyumna.simhansapp.R;
 import pradyumna.simhansapp.adaptersFolders.RvClickHandler;
-import pradyumna.simhansapp.utils.LoadingDialog;
 
 public class PRvAdapter extends ListAdapter<String,PRvAdapter.PRvViewHolder> {
 
@@ -65,28 +58,7 @@ public class PRvAdapter extends ListAdapter<String,PRvAdapter.PRvViewHolder> {
         public PRvViewHolder(@NonNull View itemView) {
             super(itemView);
             mTextView=itemView.findViewById(R.id.FileNameRV);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-//                    LoadingDialog loadingDialog=new LoadingDialog(callerActivity);
-//                    loadingDialog.startLoading();
-//                    Thread thread=new Thread(){
-//                        @Override
-//                        public void run() {
-//                            try {
-//                                Thread.sleep(3000);
-//                                loadingDialog.isDismiss();
-//                                super.run();
-//                            }
-//                            catch (Exception e) {
-//                                Log.e("tag", e.getMessage());
-//                            }
-//                        }
-//                    };
-//                    thread.start();
-                    mRvClickHandler.onItemClick(getAdapterPosition());
-                }
-            });
+            itemView.setOnClickListener(view -> mRvClickHandler.onItemClick(getAdapterPosition()));
         }
     }
 

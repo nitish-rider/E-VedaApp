@@ -6,10 +6,11 @@ import pradyumna.simhansapp.R
 
 class LoadingDialog(val mActivity: Activity) {
     private lateinit var isdialog: AlertDialog
-    fun startLoading(){
+    fun startLoading() {
         /**set View*/
         val infalter = mActivity.layoutInflater
-        val dialogView = infalter.inflate(R.layout.progress_dialog,null)
+        val dialogView = infalter.inflate(R.layout.progress_dialog, null)
+
         /**set Dialog*/
         val bulider = AlertDialog.Builder(mActivity)
         bulider.setView(dialogView)
@@ -18,7 +19,8 @@ class LoadingDialog(val mActivity: Activity) {
         isdialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
         isdialog.show()
     }
-    fun isDismiss(){
+
+    fun isDismiss() {
         isdialog.dismiss()
     }
 }

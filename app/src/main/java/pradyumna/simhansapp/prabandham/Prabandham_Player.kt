@@ -3,7 +3,6 @@ package pradyumna.simhansapp.prabandham
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.media.MediaPlayer
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -26,7 +25,7 @@ import pradyumna.simhansapp.utils.LoadingDialog
 import pradyumna.simhansapp.viewModel.PrabandhamDataViewModel
 import java.util.concurrent.TimeUnit
 
-class Prabandham_Player : AppCompatActivity(),RvClickHandler {
+class Prabandham_Player : AppCompatActivity(), RvClickHandler {
 
     override fun onBackPressed() {
         super.onBackPressed()
@@ -66,7 +65,6 @@ class Prabandham_Player : AppCompatActivity(),RvClickHandler {
     private lateinit var mRecyclerView: RecyclerView
     lateinit var mPrabandhamDataViewModel: PrabandhamDataViewModel
     private var pause: Boolean = false
-
 
 
     lateinit var items: Map<String, Any>
@@ -112,7 +110,7 @@ class Prabandham_Player : AppCompatActivity(),RvClickHandler {
         mPrabandhamDataViewModel = ViewModelProvider(this).get(PrabandhamDataViewModel::class.java)
 
         //Set adapter
-        val adapter = PRvAdapter(this,this)
+        val adapter = PRvAdapter(this, this)
         mRecyclerView.adapter = adapter
         mRecyclerView.layoutManager = LinearLayoutManager(applicationContext)
 
@@ -120,9 +118,9 @@ class Prabandham_Player : AppCompatActivity(),RvClickHandler {
         val name = intent.getStringExtra("Name")
         Log.d("intent", "Extras: $name")
 
-        mPrabandhamDataViewModel!!.getAllFileName(name).observe(this,{ stringObjectMap ->
+        mPrabandhamDataViewModel.getAllFileName(name).observe(this, { stringObjectMap ->
             if (stringObjectMap != null) {
-                val sortedMap=stringObjectMap.toSortedMap(compareBy<String> { it.length }.thenBy { it })
+                val sortedMap = stringObjectMap.toSortedMap(compareBy<String> { it.length }.thenBy { it })
                 items = sortedMap.toMap()
                 adapter.submitList(sortedMap.keys.toList())
             } else {
@@ -179,7 +177,7 @@ class Prabandham_Player : AppCompatActivity(),RvClickHandler {
                 if (p2) {
                     mediaPlayer.seekTo(p1)
                 }
-                player_time_start.text = milliSecondToTimer(mediaPlayer.currentPosition.toLong());
+                player_time_start.text = milliSecondToTimer(mediaPlayer.currentPosition.toLong())
             }
 
             override fun onStartTrackingTouch(p0: SeekBar?) {
@@ -219,12 +217,12 @@ class Prabandham_Player : AppCompatActivity(),RvClickHandler {
         val url = items[items.keys.elementAt(position)].toString()
         mediaPlayer.setDataSource(url)
         mediaPlayer.prepareAsync()
-        mediaPlayer.setOnPreparedListener() {
+        mediaPlayer.setOnPreparedListener {
             mediaPlayer.start()
             player_file_name.text = items.keys.elementAt(position)
             pauseBtn.visibility = View.VISIBLE
             play_Btn.visibility = View.GONE
-            val finalTime = mediaPlayer.duration;
+            val finalTime = mediaPlayer.duration
             player_time_start.text = milliSecondToTimer(0)
             player_time_end.text = String.format("%02d : %02d", TimeUnit.MILLISECONDS.toMinutes(finalTime.toLong()), TimeUnit.MILLISECONDS.toSeconds(finalTime.toLong()) - TimeUnit.MILLISECONDS.toMinutes(finalTime.toLong()) * 60)
             seekBar.max = finalTime.toInt()

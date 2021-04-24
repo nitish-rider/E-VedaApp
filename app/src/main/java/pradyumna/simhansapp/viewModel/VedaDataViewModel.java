@@ -22,7 +22,7 @@ public class VedaDataViewModel extends AndroidViewModel {
 
     public VedaDataViewModel(@NonNull Application application) {
         super(application);
-        FileData=new MutableLiveData<>();
+        FileData = new MutableLiveData<>();
     }
 
     public MutableLiveData<Map<String, Object>> getAllFileName(String Doc) {

@@ -3,7 +3,6 @@ package pradyumna.simhansapp.sthotas
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.media.MediaPlayer
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -26,7 +25,7 @@ import pradyumna.simhansapp.utils.LoadingDialog
 import pradyumna.simhansapp.viewModel.SthotasDataViewModel
 import java.util.concurrent.TimeUnit
 
-class Sthotras_Player : AppCompatActivity(),RvClickHandler {
+class Sthotras_Player : AppCompatActivity(), RvClickHandler {
 
     override fun onBackPressed() {
         super.onBackPressed()
@@ -57,20 +56,17 @@ class Sthotras_Player : AppCompatActivity(),RvClickHandler {
     var mediaPlayer: MediaPlayer = MediaPlayer()
     lateinit var player_file_name: TextView
     lateinit var player_time_start: TextView
-    lateinit var player_time_end: TextView
-    lateinit var back_10_sec: Button
+    private lateinit var player_time_end: TextView
+    private lateinit var back_10_sec: Button
     lateinit var forward_10_sec: Button
     var handler = Handler()
     private lateinit var pauseBtn: Button
-    var runnable: Runnable? = null
 
     private lateinit var mRecyclerView: RecyclerView
-    lateinit var mSthotasDataViewModel: SthotasDataViewModel
-
-    private var pause: Boolean = false
+    private lateinit var mSthotasDataViewModel: SthotasDataViewModel
 
 
-    lateinit var items: Map<String, Any>
+    private lateinit var items: Map<String, Any>
     override fun onCreate(savedInstanceState: Bundle?) {
 
         //Status bar Color
@@ -112,7 +108,7 @@ class Sthotras_Player : AppCompatActivity(),RvClickHandler {
         mSthotasDataViewModel = ViewModelProvider(this).get(SthotasDataViewModel::class.java)
 
         //Set adapter
-        val adapter = PRvAdapter(this,this)
+        val adapter = PRvAdapter(this, this)
         mRecyclerView.adapter = adapter
         mRecyclerView.layoutManager = LinearLayoutManager(applicationContext)
 
@@ -122,14 +118,14 @@ class Sthotras_Player : AppCompatActivity(),RvClickHandler {
 
         mSthotasDataViewModel.getAllFileName(name).observe(this, { stringObjectMap ->
             if (stringObjectMap != null) {
-                val sortedMap=stringObjectMap.toSortedMap(compareBy<String> { it.length }.thenBy { it })
+                val sortedMap = stringObjectMap.toSortedMap(compareBy<String> { it.length }.thenBy { it })
                 items = sortedMap.toMap()
                 adapter.submitList(sortedMap.keys.toList())
             } else {
                 Log.d("Set Send", "DATA NOT SEND TO ADAPTER")
             }
         })
-        play_Btn.setOnClickListener(View.OnClickListener {
+        play_Btn.setOnClickListener {
             if (mediaPlayer.isPlaying) {
                 Toast.makeText(this, "Media already playing", Toast.LENGTH_SHORT).show()
             } else {
@@ -138,10 +134,10 @@ class Sthotras_Player : AppCompatActivity(),RvClickHandler {
                 play_Btn.visibility = View.GONE
                 updateSeekBar()
             }
-        })
-        back_10_sec.setOnClickListener(View.OnClickListener {
+        }
+        back_10_sec.setOnClickListener {
             if (mediaPlayer.isPlaying) {
-                var currrPosition = mediaPlayer.currentPosition
+                val currrPosition = mediaPlayer.currentPosition
                 if (currrPosition - 10000 > 0) {
                     mediaPlayer.seekTo(currrPosition - 10000)
                     player_time_start.text = milliSecondToTimer(mediaPlayer.currentPosition.toLong())
@@ -149,11 +145,11 @@ class Sthotras_Player : AppCompatActivity(),RvClickHandler {
                     mediaPlayer.stop()
                 }
             }
-        })
+        }
 
-        forward_10_sec.setOnClickListener(View.OnClickListener {
+        forward_10_sec.setOnClickListener {
             if (mediaPlayer.isPlaying) {
-                var currrPosition = mediaPlayer.currentPosition
+                val currrPosition = mediaPlayer.currentPosition
                 if (currrPosition + 10000 < mediaPlayer.duration) {
                     mediaPlayer.seekTo(currrPosition + 10000)
                     player_time_start.text = milliSecondToTimer(mediaPlayer.currentPosition.toLong())
@@ -162,23 +158,23 @@ class Sthotras_Player : AppCompatActivity(),RvClickHandler {
                     mediaPlayer.stop()
                 }
             }
-        })
+        }
 
-        pauseBtn.setOnClickListener(View.OnClickListener {
+        pauseBtn.setOnClickListener {
             if (mediaPlayer.isPlaying) {
                 handler.removeCallbacks(updater)
                 mediaPlayer.pause()
                 pauseBtn.visibility = View.GONE
                 play_Btn.visibility = View.VISIBLE
             }
-        })
+        }
 
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
                 if (p2) {
                     mediaPlayer.seekTo(((p1 / 100.0) * mediaPlayer.duration).toInt())
                 }
-                player_time_start.text = milliSecondToTimer(mediaPlayer.currentPosition.toLong());
+                player_time_start.text = milliSecondToTimer(mediaPlayer.currentPosition.toLong())
             }
 
             override fun onStartTrackingTouch(p0: SeekBar?) {
@@ -188,14 +184,11 @@ class Sthotras_Player : AppCompatActivity(),RvClickHandler {
             }
 
         })
-        mediaPlayer.setOnCompletionListener(object : MediaPlayer.OnCompletionListener {
-            override fun onCompletion(p0: MediaPlayer?) {
-                play_button.visibility = View.VISIBLE
-                pauseBtn.visibility = View.GONE
-                mediaPlayer.seekTo(0)
-            }
-
-        })
+        mediaPlayer.setOnCompletionListener {
+            play_button.visibility = View.VISIBLE
+            pauseBtn.visibility = View.GONE
+            mediaPlayer.seekTo(0)
+        }
 
     }
 
@@ -208,25 +201,20 @@ class Sthotras_Player : AppCompatActivity(),RvClickHandler {
         val loading = LoadingDialog(this)
         loading.startLoading()
         val handler = Handler()
-        handler.postDelayed(object : Runnable {
-            override fun run() {
-                loading.isDismiss()
-            }
-
-        }, 3000)
+        handler.postDelayed({ loading.isDismiss() }, 3000)
         Log.d("Song Data", "URL: " + items[items.keys.elementAt(position)].toString())
         val url = items[items.keys.elementAt(position)].toString()
         mediaPlayer.setDataSource(url)
         mediaPlayer.prepareAsync()
-        mediaPlayer.setOnPreparedListener() {
+        mediaPlayer.setOnPreparedListener {
             mediaPlayer.start()
             player_file_name.text = items.keys.elementAt(position)
             pauseBtn.visibility = View.VISIBLE
             play_Btn.visibility = View.GONE
-            val finalTime = mediaPlayer.duration;
+            val finalTime = mediaPlayer.duration
             player_time_start.text = milliSecondToTimer(0)
             player_time_end.text = String.format("%02d : %02d", TimeUnit.MILLISECONDS.toMinutes(finalTime.toLong()), TimeUnit.MILLISECONDS.toSeconds(finalTime.toLong()) - TimeUnit.MILLISECONDS.toMinutes(finalTime.toLong()) * 60)
-            seekBar.max = finalTime.toInt()
+            seekBar.max = finalTime
             updateSeekBar()
         }
     }
@@ -247,8 +235,8 @@ class Sthotras_Player : AppCompatActivity(),RvClickHandler {
         }
     }
 
-    private fun milliSecondToTimer(duration: Long): String? {
-        return String.format("%02d:%02d", TimeUnit.MILLISECONDS.toMinutes(duration.toLong()), TimeUnit.MILLISECONDS.toSeconds(duration.toLong()) - TimeUnit.MILLISECONDS.toMinutes(duration.toLong()) * 60)
+    private fun milliSecondToTimer(duration: Long): String {
+        return String.format("%02d:%02d", TimeUnit.MILLISECONDS.toMinutes(duration), TimeUnit.MILLISECONDS.toSeconds(duration) - TimeUnit.MILLISECONDS.toMinutes(duration) * 60)
     }
 
 
