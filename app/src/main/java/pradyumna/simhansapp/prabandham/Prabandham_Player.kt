@@ -35,6 +35,18 @@ class Prabandham_Player : AppCompatActivity(), RvClickHandler {
 
     }
 
+    override fun onPause() {
+        super.onPause()
+        if(mediaPlayer.isPlaying){
+            mediaPlayer.pause()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        mediaPlayer.start()
+    }
+
     override fun onRestart() {
         super.onRestart()
         if (mediaPlayer.isPlaying) {

@@ -10,6 +10,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light"
         android:usesCleartextTraffic="true"
@@ -17,6 +18,8 @@
         <activity
             android:name=".learn_veda.Veda_Player"
             android:label="@string/title_activity_learn_vedas"
+            android:screenOrientation="portrait"
+
             android:parentActivityName=".learn_veda.Learn_Veda">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
@@ -24,6 +27,8 @@
         </activity>
         <activity
             android:name=".sthotas.Sthotras_Player"
+            android:screenOrientation="portrait"
+
             android:parentActivityName=".sthotas.Sthotras" />
         <activity
             android:name=".prabandham.Prabandham_Player"
@@ -31,6 +36,7 @@
         <activity
             android:name=".splash.Splash1"
             android:label="@string/app_name"
+
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Design.Light.NoActionBar">
             <intent-filter>
@@ -42,6 +48,8 @@
         <activity
             android:name=".splash.Splash2"
             android:label="@string/title_activity_splash_screen2"
+            android:screenOrientation="portrait"
+
             android:theme="@style/Theme.Design.Light.NoActionBar">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
@@ -50,6 +58,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.Design.Light.NoActionBar">
             <intent-filter>
                 <action android:name="pradyumna.simhansapp.MainActivity" />
@@ -60,6 +69,8 @@
         <activity
             android:name=".prabandham.Prabandham"
             android:label="@string/title_activity_prabandham"
+            android:screenOrientation="portrait"
+
             android:parentActivityName=".MainActivity">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
@@ -68,6 +79,8 @@
         <activity
             android:name=".feedback.Feedback"
             android:label="@string/title_activity_feedback"
+            android:screenOrientation="portrait"
+
             android:parentActivityName=".MainActivity">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
@@ -76,6 +89,8 @@
         <activity
             android:name=".contact.Contact"
             android:label="@string/title_activity_contact"
+            android:screenOrientation="portrait"
+
             android:parentActivityName=".MainActivity">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
@@ -91,6 +106,8 @@
         <activity
             android:name=".instructions.Instructions"
             android:label="@string/title_activity_instructions"
+            android:screenOrientation="portrait"
+
             android:parentActivityName=".MainActivity">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
@@ -99,6 +116,8 @@
         <activity
             android:name=".learn_veda.Learn_Veda"
             android:label="@string/title_activity_veda_folders"
+            android:screenOrientation="portrait"
+
             android:parentActivityName=".MainActivity">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
@@ -107,6 +126,8 @@
         <activity
             android:name=".developers.Developers"
             android:label="@string/title_activity_developers"
+            android:screenOrientation="portrait"
+
             android:parentActivityName=".MainActivity">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
@@ -115,6 +136,8 @@
         <activity
             android:name=".about.About"
             android:label="@string/title_activity_about"
+            android:screenOrientation="portrait"
+
             android:parentActivityName=".MainActivity">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
@@ -123,6 +146,8 @@
         <activity
             android:name=".sthotas.Sthotras"
             android:label="@string/title_activity_sthothram"
+            android:screenOrientation="portrait"
+
             android:parentActivityName=".MainActivity">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
@@ -131,6 +156,8 @@
         <activity
             android:name=".prateekas.Prateekas"
             android:label="@string/title_activity_prateekas"
+            android:screenOrientation="portrait"
+
             android:parentActivityName=".MainActivity">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />

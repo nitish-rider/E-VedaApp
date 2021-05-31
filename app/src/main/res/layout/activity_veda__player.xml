@@ -50,17 +50,14 @@
             <SeekBar
                 android:id="@+id/seekBar"
                 android:layout_width="0dp"
-                android:layout_height="10dp"
                 android:layout_weight="1"
+                android:layout_height="20dp"
                 android:min="0"
                 android:max="100"
-
                 android:progressTint="#000000"
                 android:layout_marginStart="2dp"
-                android:progressDrawable="@drawable/progress"
-                android:thumb="@drawable/thumb"
                 android:layout_gravity="center"
-                android:layout_marginEnd="2dp"/>
+                android:layout_marginEnd="2dp" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

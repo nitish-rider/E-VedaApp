@@ -35,6 +35,18 @@ class Veda_Player : AppCompatActivity(), RvClickHandler {
         }
     }
 
+    override fun onPause() {
+        super.onPause()
+        if(mediaPlayer.isPlaying){
+            mediaPlayer.pause()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        mediaPlayer.start()
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         if (mediaPlayer.isPlaying) {
@@ -220,7 +232,9 @@ class Veda_Player : AppCompatActivity(), RvClickHandler {
             pauseBtn.visibility = View.VISIBLE
             play_Btn.visibility = View.GONE
             val finalTime = mediaPlayer.duration
+            Log.d("Song Duration", "Duration: " + mediaPlayer.duration)
             player_time_start.text = milliSecondToTimer(0)
+            Log.d("Song time", "time: " + String.format("%02d : %02d", TimeUnit.MILLISECONDS.toMinutes(finalTime.toLong()), TimeUnit.MILLISECONDS.toSeconds(finalTime.toLong()) - TimeUnit.MILLISECONDS.toMinutes(finalTime.toLong()) * 60))
             player_time_end.text = String.format("%02d : %02d", TimeUnit.MILLISECONDS.toMinutes(finalTime.toLong()), TimeUnit.MILLISECONDS.toSeconds(finalTime.toLong()) - TimeUnit.MILLISECONDS.toMinutes(finalTime.toLong()) * 60)
             seekBar.max = finalTime
             updateSeekBar()
